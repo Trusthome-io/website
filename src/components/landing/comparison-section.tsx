@@ -19,19 +19,14 @@ const comparisonData = [
     trusthome: { text: "Non nécessaire, économie directe pour vous", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
-    feature: "Gestion des impayés et procédures",
-    classic: { text: "À la charge et stress du propriétaire", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Pris en charge intégralement par TrustHome", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
-  },
-  {
     feature: "Risque de squatteur / Droit au bail",
     classic: { text: "Risque existant, procédure longue et coûteuse", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun risque, TrustHome est locataire, pas de droit au bail pour les occupants", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Aucun risque, notre bail souple permet au propriétaire de mettre fin au contrat quand il le souhaite.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
     feature: "Entretien courant et embellissements",
-    classic: { text: "À la charge du propriétaire (temps et argent)", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Nettoyage pro régulier, embellissements (peinture, déco), petites réparations inclus", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    classic: { text: "Souvent à la charge du propriétaire (temps et argent). Le bien est fréquemment rendu en mauvais état avec une usure marquée.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
+    trusthome: { text: "Nettoyage pro régulier, embellissements (peinture, déco), petites réparations inclus. Votre bien est maintenu en excellent état.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
     feature: "Gestion des dégradations",
