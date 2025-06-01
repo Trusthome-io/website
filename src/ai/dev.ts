@@ -1,4 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/property-confidence-score.ts';
+// property-confidence-score.ts was removed as the feature is no longer used.
