@@ -35,7 +35,7 @@ const prompt = ai.definePrompt({
   name: 'assessPropertyConfidenceScorePrompt',
   input: {schema: AssessPropertyConfidenceScoreInputSchema},
   output: {schema: AssessPropertyConfidenceScoreOutputSchema},
-  prompt: `You are an AI assistant specialized in assessing the viability of properties for TrustHome, a professional sub-leasing company.
+  prompt: `You are an AI assistant specialized in assessing the viability of properties for TrustHome, a professional property operation company.
 
   Evaluate the potential of a property based on the following details:
 

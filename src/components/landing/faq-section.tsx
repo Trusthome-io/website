@@ -8,8 +8,8 @@ import { HelpCircle } from "lucide-react";
 
 const faqItems = [
   {
-    question: "Qu'est-ce que la sous-location professionnelle avec TrustHome ?",
-    answer: "TrustHome devient votre locataire principal et s'occupe de sous-louer votre bien à des professionnels ou des particuliers soigneusement sélectionnés. Nous garantissons votre loyer et prenons en charge toute la gestion.",
+    question: "Qu'est-ce que l'exploitation professionnelle de biens avec TrustHome ?",
+    answer: "TrustHome devient votre partenaire principal et s'occupe d'exploiter votre bien pour des professionnels ou des particuliers soigneusement sélectionnés. Nous garantissons votre loyer et prenons en charge toute la gestion.",
   },
   {
     question: "Mon loyer est-il garanti même si le bien n'est pas occupé ?",
@@ -20,7 +20,7 @@ const faqItems = [
     answer: "TrustHome prend en charge l'entretien courant et les petites réparations. Pour les réparations majeures, nous vous consultons selon les termes du contrat.",
   },
   {
-    question: "Comment TrustHome sélectionne les sous-locataires ?",
+    question: "Comment TrustHome sélectionne les occupants ?",
     answer: "Nous avons un processus de sélection rigoureux incluant vérification des revenus, des antécédents et des références pour assurer la qualité et la fiabilité des occupants.",
   },
   {
@@ -43,7 +43,7 @@ export function FaqSection() {
             Questions Fréquemment Posées
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Trouvez ici les réponses à vos interrogations sur nos services de sous-location professionnelle.
+            Trouvez ici les réponses à vos interrogations sur nos services d'exploitation professionnelle de biens.
           </p>
         </div>
         <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">

@@ -20,7 +20,7 @@ const processSteps = [
   {
     icon: KeyRound,
     title: "Prise en Charge Complète",
-    description: "Nous nous occupons de tout : trouver des sous-locataires qualifiés, gérer l'entretien, etc.",
+    description: "Nous nous occupons de tout : trouver des occupants qualifiés, gérer l'entretien, etc.",
   },
   {
     icon: Award,

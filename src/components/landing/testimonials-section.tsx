@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Marc D.",
     title: "Investisseur immobilier",
-    quote: "TrustHome est un partenaire fiable et professionnel. Leur approche de la sous-location est innovante et très avantageuse pour les propriétaires.",
+    quote: "TrustHome est un partenaire fiable et professionnel. Leur approche de l'exploitation de biens est innovante et très avantageuse pour les propriétaires.",
     avatar: "MD",
     rating: 5,
     image: "https://placehold.co/100x100.png",
