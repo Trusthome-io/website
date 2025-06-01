@@ -6,27 +6,27 @@ const comparisonData = [
   {
     feature: "Stabilité Financière & Économies",
     classic: { text: "Risque d'impayés, frais d'agence (5-10%), coût d'Assurance Loyers Impayés (2-4%).", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Loyer garanti à date fixe, même si vacant, et aucune vacance locative grâce à nos bails. Zéro frais, économie sur la GLI.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Loyer garanti à date fixe, même si vacant, et aucune vacance locative grâce à nos bails. Zéro frais, économie sur la GLI.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
   {
     feature: "Sécurité Juridique & Flexibilité",
     classic: { text: "Risque de squatteur, bail rigide avec préavis longs.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
   {
     feature: "Entretien & Valorisation du Bien",
     classic: { text: "Souvent à charge du propriétaire (temps et argent). Bien fréquemment rendu en mauvais état avec usure marquée.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Nettoyage pro régulier, embellissements (peinture, déco), petites réparations inclus. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Nettoyage pro régulier, embellissements (peinture, déco), petites réparations inclus. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
   {
     feature: "Tranquillité d'Esprit & Zéro Gestion",
     classic: { text: "Gestion chronophage, stress des imprévus, relations locataires complexes.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun temps de gestion, un seul interlocuteur dédié. Sérénité maximale, zéro charge mentale.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Aucun temps de gestion, un seul interlocuteur dédié. Sérénité maximale, zéro charge mentale.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
   {
     feature: "Levier pour Projets Futurs",
     classic: { text: "Revenus locatifs parfois vus avec prudence par les banques.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Revenus garantis et bail solide, reconnus et valorisés pour vos financements futurs.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Revenus garantis et bail solide, reconnus et valorisés pour vos financements futurs.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
 ];
 

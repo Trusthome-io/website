@@ -32,6 +32,9 @@
     --destructive: 0 84.2% 60.2%; /* Default red */
     --destructive-foreground: 0 0% 98%;
 
+    --success: 134 41% 44%; /* Professional Green */
+    --success-foreground: 0 0% 100%; /* White */
+
     --border: 195 30% 80%; /* Light teal/gray border */
     --input: 0 0% 100%; /* White input background for better contrast on light teal */
     --ring: 195 37% 43.7%; /* Primary color for rings */
@@ -73,6 +76,8 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+    --success: 134 45% 55%; /* Brighter Green for dark mode */
+    --success-foreground: 0 0% 9%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
