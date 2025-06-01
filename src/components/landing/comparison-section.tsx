@@ -4,54 +4,29 @@ import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
 
 const comparisonData = [
   {
-    feature: "Loyer garanti chaque mois",
-    classic: { text: "Non (risque d'impayés et de vacance)", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Oui, à date fixe, même si le bien est vacant", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    feature: "Stabilité Financière & Économies",
+    classic: { text: "Risque d'impayés, frais d'agence (5-10%), coût d'Assurance Loyers Impayés (2-4%).", icon: <XCircle className="h-6 w-6 text-destructive" /> },
+    trusthome: { text: "Loyer garanti à date fixe, même si vacant. Zéro frais, économie sur la GLI.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
-    feature: "Frais de gestion et d'agence",
-    classic: { text: "Oui (souvent 5-10% du loyer)", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun, zéro prélèvement sur vos loyers", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    feature: "Sécurité Juridique & Flexibilité",
+    classic: { text: "Risque de squatteur, bail rigide avec préavis longs.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
+    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
-    feature: "Assurance Loyers Impayés (GLI)",
-    classic: { text: "Fortement recommandée (coût 2-4% du loyer)", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Non nécessaire, économie directe pour vous", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    feature: "Entretien & Valorisation du Bien",
+    classic: { text: "Souvent à charge du propriétaire (temps et argent). Bien fréquemment rendu en mauvais état avec usure marquée.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
+    trusthome: { text: "Nettoyage pro régulier, embellissements (peinture, déco), petites réparations inclus. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
-    feature: "Risque de squatteur / Droit au bail",
-    classic: { text: "Risque existant, procédure longue et coûteuse", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun risque, notre bail souple permet au propriétaire de mettre fin au contrat quand il le souhaite.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    feature: "Tranquillité d'Esprit & Zéro Gestion",
+    classic: { text: "Gestion chronophage, stress des imprévus, relations locataires complexes.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
+    trusthome: { text: "Aucun temps de gestion, un seul interlocuteur dédié. Sérénité maximale, zéro charge mentale.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
-    feature: "Entretien courant et embellissements",
-    classic: { text: "Souvent à la charge du propriétaire (temps et argent). Le bien est fréquemment rendu en mauvais état avec une usure marquée.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Nettoyage pro régulier, embellissements (peinture, déco), petites réparations inclus. Votre bien est maintenu en excellent état.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
-  },
-  {
-    feature: "Gestion des dégradations",
-    classic: { text: "Souvent complexe et coûteux pour le propriétaire", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Couvert par TrustHome, incluant entretien esthétique continu", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
-  },
-  {
-    feature: "Flexibilité du contrat / Reprise du bien",
-    classic: { text: "Rigide, préavis longs et conditions strictes", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Flexible (1-3+ ans), clauses de sortie/revente anticipée prévues", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
-  },
-  {
-    feature: "Temps consacré à la gestion",
-    classic: { text: "Très important, gestion chronophage", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun, un seul interlocuteur dédié chez TrustHome", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
-  },
-  {
-    feature: "Tranquillité d'esprit / Charge mentale",
-    classic: { text: "Limitée (stress, imprévus, relations locataires)", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Maximale : aucun imprévu, zéro charge mentale", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
-  },
-  {
-    feature: "Impact sur projets futurs (financement)",
-    classic: { text: "Revenus locatifs parfois vus avec prudence par les banques", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Revenus garantis et bail solide, reconnus et valorisés pour financement", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    feature: "Levier pour Projets Futurs",
+    classic: { text: "Revenus locatifs parfois vus avec prudence par les banques.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
+    trusthome: { text: "Revenus garantis et bail solide, reconnus et valorisés pour vos financements futurs.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
 ];
 
@@ -75,7 +50,7 @@ export function ComparisonSection() {
                 <thead className="bg-muted/50">
                   <tr>
                     <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-primary tracking-wider font-headline">
-                      Caractéristique
+                      Avantage Clé
                     </th>
                     <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-primary tracking-wider font-headline">
                       Location Classique
