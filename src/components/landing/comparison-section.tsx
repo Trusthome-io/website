@@ -6,7 +6,7 @@ const comparisonData = [
   {
     feature: "Stabilité Financière & Économies",
     classic: { text: "Risque d'impayés, frais d'agence (5-10%), coût d'Assurance Loyers Impayés (2-4%).", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Loyer garanti à date fixe, même si vacant. Zéro frais, économie sur la GLI.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
+    trusthome: { text: "Loyer garanti à date fixe, même si vacant, et aucune vacance locative grâce à nos bails. Zéro frais, économie sur la GLI.", icon: <CheckCircle2 className="h-6 w-6 text-primary" /> },
   },
   {
     feature: "Sécurité Juridique & Flexibilité",
