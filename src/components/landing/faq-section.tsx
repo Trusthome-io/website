@@ -1,3 +1,4 @@
+
 import {
   Accordion,
   AccordionContent,
@@ -9,27 +10,39 @@ import { HelpCircle } from "lucide-react";
 const faqItems = [
   {
     question: "Qu'est-ce que l'exploitation professionnelle de biens avec TrustHome ?",
-    answer: "TrustHome devient votre partenaire principal et s'occupe d'exploiter votre bien pour des professionnels ou des particuliers soigneusement sélectionnés. Nous garantissons votre loyer et prenons en charge toute la gestion.",
+    answer: "TrustHome devient votre locataire principal et valorise votre bien en hébergement haut de gamme pour nos partenaires professionnels et voyageurs. Nous garantissons votre loyer et prenons en charge toute la gestion, vous n'avez qu'un seul interlocuteur.",
   },
   {
     question: "Mon loyer est-il garanti même si le bien n'est pas occupé ?",
-    answer: "Absolument. TrustHome vous verse le loyer convenu chaque mois, que le bien soit occupé ou non. C'est notre engagement pour votre tranquillité.",
+    answer: "Absolument. TrustHome vous verse le loyer convenu à date fixe chaque mois, que le bien soit occupé ou non. C'est notre engagement pour votre tranquillité et la fin des assurances loyers impayés.",
   },
   {
     question: "Qui s'occupe de l'entretien et des réparations ?",
-    answer: "TrustHome prend en charge l'entretien courant et les petites réparations. Pour les réparations majeures, nous vous consultons selon les termes du contrat.",
+    answer: "TrustHome prend en charge l'entretien courant, les petites réparations, les embellissements (peinture, déco) et plusieurs nettoyages professionnels par semaine. Pour les réparations structurelles majeures (ex: chaudière, toiture), nous vous consultons selon les termes du contrat.",
+  },
+  {
+    question: "Quels sont les frais avec TrustHome ?",
+    answer: "Zéro frais cachés. Contrairement à la gestion classique, il n'y a pas de frais d'agence, pas de frais de gestion prélevés sur vos loyers, et vous économisez le coût d'une assurance loyers impayés.",
   },
   {
     question: "Comment TrustHome sélectionne les occupants ?",
-    answer: "Nous avons un processus de sélection rigoureux incluant vérification des revenus, des antécédents et des références pour assurer la qualité et la fiabilité des occupants.",
+    answer: "TrustHome est votre unique locataire. Nous accueillons ensuite nos partenaires professionnels et voyageurs soigneusement vérifiés. Vous n'avez aucune interaction directe avec les occupants finaux.",
   },
   {
     question: "Quelle est la durée typique d'un contrat avec TrustHome ?",
-    answer: "Nos contrats sont flexibles et adaptés à vos besoins. Généralement, nous proposons des contrats d'une durée de 1 à 3 ans, renouvelables.",
+    answer: "Nos contrats, rédigés par des avocats, sont flexibles (généralement 1 à 3 ans, renouvelables) et peuvent inclure des clauses de sortie ou de revente anticipée pour s'adapter à vos projets.",
   },
   {
     question: "Que se passe-t-il en cas de dégradations du bien ?",
-    answer: "TrustHome est responsable de l'état du bien. Nous souscrivons des assurances adéquates et nous engageons à restituer votre propriété dans l'état où vous nous l'avez confiée, hors usure normale.",
+    answer: "TrustHome est responsable de l'état du bien. En plus des assurances adéquates, notre modèle inclut un entretien constant et des remises en état régulières pour valoriser votre propriété.",
+  },
+  {
+    question: "Comment TrustHome me protège-t-il du risque de squatteurs ?",
+    answer: "Avec TrustHome, ce risque est inexistant. Nous sommes votre unique locataire. Les professionnels et voyageurs que nous hébergeons n'ont aucun droit au bail et sont présents pour des durées contractuelles définies avec nous.",
+  },
+  {
+    question: "TrustHome peut-il m'aider à obtenir un prêt bancaire ?",
+    answer: "Oui. Les revenus locatifs garantis et réguliers versés par TrustHome, ainsi que la solidité de notre bail, sont des éléments très appréciés des banques et peuvent faciliter l'obtention de financements pour vos futurs projets immobiliers.",
   },
 ];
 

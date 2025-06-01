@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ClipboardList, FileSearch, Handshake, KeyRound, Award } from "lucide-react";
 
@@ -15,12 +16,12 @@ const processSteps = [
   {
     icon: Handshake,
     title: "Signature du Contrat",
-    description: "Un contrat clair et protecteur pour les deux parties. Signez en toute confiance.",
+    description: "Un contrat clair et protecteur, rédigé par des avocats. Signez en toute transparence et flexibilité (1, 2, 3 ans ou plus).",
   },
   {
     icon: KeyRound,
     title: "Prise en Charge Complète",
-    description: "Nous nous occupons de tout : trouver des occupants qualifiés, gérer l'entretien, etc.",
+    description: "Nous gérons l'accueil de nos partenaires, l'entretien méticuleux (nettoyages fréquents, embellissements) et la maintenance préventive.",
   },
   {
     icon: Award,
@@ -41,7 +42,7 @@ export function ProcessSection() {
             Découvrez comment TrustHome transforme la location de votre bien en une expérience sereine et profitable en quelques étapes claires.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {processSteps.map((step, index) => (
             <div key={index} className="flex">
               <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
