@@ -22,7 +22,11 @@ export async function getConfidenceScoreAction(
   const validatedInput = AssessPropertyConfidenceScoreInputSchema.safeParse(input);
 
   if (!validatedInput.success) {
-    return { success: false, error: validatedInput.error.flatten().fieldErrors_old };
+    const formErrors = validatedInput.error.flatten().formErrors;
+    const fieldErrorMessages = Object.values(validatedInput.error.flatten().fieldErrors || {}).flat();
+    const allErrors = [...formErrors, ...fieldErrorMessages];
+    const errorMessage = allErrors.length > 0 ? allErrors.join('; ') : "Validation a échoué côté serveur. Veuillez vérifier vos saisies.";
+    return { success: false, error: errorMessage };
   }
 
   try {

@@ -1,10 +1,26 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster"; // Added Toaster
+import { Toaster } from "@/components/ui/toaster";
+import { PT_Sans, Space_Grotesk } from 'next/font/google';
+
+const ptSans = PT_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-pt-sans',
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: 'TrustHome - Sous-location professionnelle',
-  description: 'Simplifiez la location de votre bien immobilier avec TrustHome.',
+  title: 'TrustHome - Exploitation professionnelle de biens',
+  description: 'Simplifiez l\'exploitation de votre bien immobilier avec TrustHome.',
 };
 
 export default function RootLayout({
@@ -13,17 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr"> {/* Changed lang to fr */}
+    <html lang="fr" className={`${ptSans.variable} ${spaceGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Removed Inter, will be replaced by PT Sans and Space Grotesk */}
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+        {/* Google Font links are now handled by next/font */}
       </head>
       <body className="font-body antialiased">
         {children}
-        <Toaster /> {/* Added Toaster */}
+        <Toaster />
       </body>
     </html>
   );

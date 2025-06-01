@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-body), sans-serif; /* Updated to use CSS variable */
-}
+/* body {
+  font-family: var(--font-body), sans-serif; Removed as next/font handles this
+} */
 
 @layer base {
   :root {
