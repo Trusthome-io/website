@@ -34,11 +34,11 @@ export function HeroSection() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <Image
               src="https://placehold.co/600x400.png"
-              alt="Illustration d'une maison moderne et sécurisée"
+              alt="Maison élégante et sereine, symbole de la tranquillité offerte par TrustHome"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl relative"
-              data-ai-hint="modern house illustration"
+              data-ai-hint="serene home"
             />
           </div>
         </div>
