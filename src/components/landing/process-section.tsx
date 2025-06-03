@@ -15,18 +15,18 @@ const processSteps = [
   },
   {
     icon: Handshake,
-    title: "Signature du Contrat",
-    description: "Un contrat clair et protecteur, rédigé par des avocats. Signez en toute transparence et flexibilité (1, 2, 3 ans ou plus).",
+    title: "Signature du Contrat de Location",
+    description: "Un contrat de location clair et protecteur, rédigé par des avocats. Signez en toute transparence et flexibilité (1, 2, 3 ans ou plus). TrustHome devient votre locataire.",
   },
   {
     icon: KeyRound,
-    title: "Prise en Charge Complète",
-    description: "Nous gérons l'accueil de nos partenaires, l'entretien méticuleux (nettoyages fréquents, embellissements) et la maintenance préventive.",
+    title: "Prise en Charge Intégrale par TrustHome",
+    description: "En tant que locataire, nous assurons l'entretien méticuleux (nettoyages fréquents, embellissements) et la maintenance préventive.",
   },
   {
     icon: Award,
     title: "Profitez de Vos Revenus",
-    description: "Recevez votre loyer garanti et profitez de votre temps libre, TrustHome s'occupe du reste.",
+    description: "Recevez votre loyer garanti et profitez de votre temps libre, TrustHome, votre locataire, s'occupe de tout.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function ProcessSection() {
             Notre Processus Simplifié
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment TrustHome transforme la location de votre bien en une expérience sereine et profitable en quelques étapes claires.
+            Découvrez comment TrustHome, en devenant votre locataire, transforme l'exploitation de votre bien en une expérience sereine et profitable.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">

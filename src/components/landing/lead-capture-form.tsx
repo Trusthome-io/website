@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -58,7 +59,7 @@ export function LeadCaptureForm() {
             <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
             <CardTitle className="text-3xl md:text-4xl font-headline font-bold text-primary">Contactez-Nous</CardTitle>
             <CardDescription className="text-lg text-muted-foreground">
-              Prêt à simplifier la gestion de votre bien ? Remplissez le formulaire ci-dessous pour une consultation gratuite.
+              Prêt à louer votre bien à TrustHome ? Remplissez le formulaire ci-dessous pour une consultation gratuite.
             </CardDescription>
           </CardHeader>
           <CardContent>

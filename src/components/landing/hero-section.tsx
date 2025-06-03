@@ -15,7 +15,7 @@ export function HeroSection() {
               Confiez-nous votre bien, profitez d'un <span className="text-accent">revenu passif garanti</span> et d'une <span className="text-accent">tranquillité absolue</span>.
             </h1>
             <p className="text-lg md:text-xl text-foreground mb-8">
-              TrustHome transforme la gestion de votre propriété. Bénéficiez d'un loyer fixe versé à date convenue, d'une absence totale de gestion et d'un bien toujours valorisé. Nous sommes votre unique locataire et interlocuteur.
+              TrustHome devient votre locataire unique et professionnel. Bénéficiez d'un loyer fixe versé à date convenue, d'une absence totale de tracas et d'un bien toujours valorisé. Nous sommes votre unique interlocuteur.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -34,7 +34,7 @@ export function HeroSection() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <Image
               src="https://placehold.co/600x400.png"
-              alt="Maison élégante et sereine, symbole de la tranquillité offerte par TrustHome"
+              alt="Maison élégante et sereine, symbole de la tranquillité offerte par TrustHome en tant que locataire professionnel"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl relative"
@@ -49,16 +49,16 @@ export function HeroSection() {
               <CardTitle className="font-headline text-xl">Loyer Garanti</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">Recevez votre loyer chaque mois, à date fixe, même si le bien est vacant. Fini les assurances loyers impayés coûteuses.</p>
+              <p className="text-muted-foreground">Recevez votre loyer chaque mois, à date fixe. Fini les assurances loyers impayés coûteuses et les vacances locatives.</p>
             </CardContent>
           </Card>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-row items-center gap-4 pb-2">
               <ShieldCheck className="h-10 w-10 text-primary" />
-              <CardTitle className="font-headline text-xl">Gestion Zéro Souci</CardTitle>
+              <CardTitle className="font-headline text-xl">Zéro Tracas</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">Nous prenons tout en charge : occupants, entretien, embellissements (peinture, déco), réparations, et démarches. Un seul interlocuteur dédié.</p>
+              <p className="text-muted-foreground">TrustHome, votre locataire, prend tout en charge : entretien, embellissements (peinture, déco), réparations. Un seul interlocuteur dédié.</p>
             </CardContent>
           </Card>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">

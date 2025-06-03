@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -19,8 +20,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'TrustHome - Exploitation professionnelle de biens',
-  description: 'Simplifiez l\'exploitation de votre bien immobilier avec TrustHome.',
+  title: 'TrustHome - Votre Locataire Professionnel Garanti',
+  description: 'Louez votre bien à TrustHome et bénéficiez d\'un revenu garanti et d\'une tranquillité totale.',
 };
 
 export default function RootLayout({
