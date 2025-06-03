@@ -11,12 +11,12 @@ const comparisonData = [
   {
     feature: "Sécurité Juridique & Flexibilité",
     classic: { text: "Risque de squatteur, bail rigide avec préavis longs.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire et lui permet de mettre fin au contrat quand il le veut). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
   {
     feature: "Entretien & Valorisation du Bien",
     classic: { text: "Souvent à la charge du propriétaire (temps et argent). Bien fréquemment rendu en mauvais état avec usure marquée.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "En tant que locataire, TrustHome assure : nettoyage pro régulier, embellissements (peinture, déco), petites réparations. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    trusthome: { text: "En tant que locataire, TrustHome assure : nettoyage pro régulier, embellissements (peinture, déco), petites réparations, et une maintenance proactive pour anticiper l'usure. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
   },
   {
     feature: "Tranquillité d'Esprit & Zéro Charge Mentale",
