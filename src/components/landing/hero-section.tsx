@@ -12,10 +12,24 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
+              Louez votre bien en toute confiance
+              <br />
               TrustHome : <span className="text-accent">Votre locataire</span> qui vous fait Bénéficiez d'un <span className="text-accent">revenu passif réellement passif</span>!
             </h1>
-            <p className="text-lg md:text-xl text-foreground mb-8">
+            <p className="text-lg md:text-xl text-foreground mb-4">
               Notre mission : offrir aux propriétaires la rentabilité locative sans les contraintes.
+            </p>
+            <p className="text-lg md:text-xl text-foreground mb-4">
+              Louer son appartement ou sa maison peut vite devenir une source de stress : retards de paiement, dégradations coûteuses, et la crainte constante des squatteurs peuvent transformer votre investissement en cauchemar.
+            </p>
+            <p className="text-lg md:text-xl text-foreground mb-4">
+              Chez TrustHome, nous comprenons ces défis. C'est pourquoi nous devenons votre unique locataire professionnel.
+            </p>
+            <p className="text-lg md:text-xl text-foreground mb-4">
+              Nous vous garantissons un loyer fixe, versé ponctuellement, prenons en charge l'exploitation, l'entretien et la valorisation de votre bien, et vous offrons une tranquillité d'esprit totale.
+            </p>
+            <p className="text-lg md:text-xl text-foreground mb-8">
+              Fini les tracas, place à la sérénité et à un revenu passif réellement passif.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
