@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'TrustHome - Votre Locataire Professionnel Garanti',
+  title: 'TrustHome : Loyer Garanti, Zéro Souci.',
   description: 'Louez votre bien à TrustHome et bénéficiez d\'un revenu garanti et d\'une tranquillité totale.',
 };
 
