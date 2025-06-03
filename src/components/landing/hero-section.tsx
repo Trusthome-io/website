@@ -12,10 +12,10 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
-              Confiez-nous votre bien, profitez d'un <span className="text-accent">revenu passif garanti</span> et d'une <span className="text-accent">tranquillité absolue</span>.
+              Louez votre bien en toute confiance à TrustHome, votre <span className="text-accent">locataire professionnel garanti</span>.
             </h1>
             <p className="text-lg md:text-xl text-foreground mb-8">
-              TrustHome devient votre locataire unique et professionnel. Bénéficiez d'un loyer fixe versé à date convenue, d'une absence totale de tracas et d'un bien toujours valorisé. Nous sommes votre unique interlocuteur.
+              Louer son appartement ou sa maison peut vite devenir une source de stress : retards de paiement, dégradations coûteuses, et la crainte constante des squatteurs peuvent transformer votre investissement en cauchemar. Chez TrustHome, nous comprenons ces défis. C'est pourquoi nous devenons votre unique locataire professionnel. Nous vous garantissons un loyer fixe, versé ponctuellement, prenons en charge l'exploitation, l'entretien et la valorisation de votre bien, et vous offrons une tranquillité d'esprit totale. Fini les tracas, place à la sérénité et à un revenu passif réellement sécurisé.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -34,11 +34,11 @@ export function HeroSection() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <Image
               src="https://placehold.co/600x400.png"
-              alt="Maison élégante et sereine, symbole de la tranquillité offerte par TrustHome en tant que locataire professionnel"
+              alt="Intérieur d'appartement moderne et lumineux, symbolisant la sérénité et la valorisation par TrustHome"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl relative"
-              data-ai-hint="serene home"
+              data-ai-hint="modern apartment interior"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ export function HeroSection() {
               <CardTitle className="font-headline text-xl">Zéro Tracas</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">TrustHome, votre locataire, prend tout en charge : entretien, embellissements (peinture, déco), réparations. Un seul interlocuteur dédié.</p>
+              <p className="text-muted-foreground">TrustHome, votre locataire, prend tout en charge : exploitation, entretien, embellissements, réparations. Un seul interlocuteur dédié.</p>
             </CardContent>
           </Card>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
