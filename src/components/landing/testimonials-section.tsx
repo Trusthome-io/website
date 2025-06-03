@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
@@ -5,30 +6,30 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Sophie L.",
-    title: "Propriétaire à Paris",
-    quote: "Depuis que j'ai confié mon appartement à TrustHome, je n'ai plus aucun souci de gestion. Loyer garanti et tranquillité d'esprit, je recommande vivement !",
+    title: "Propriétaire d'un T2 à Paris (Le Marais)",
+    quote: "Mon T2 dans le Marais est entre de bonnes mains avec TrustHome. Plus de stress lié à la gestion locative, loyers reçus à date fixe et mon bien est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
     avatar: "SL",
     rating: 5,
     image: "https://placehold.co/100x100.png",
-    imageHint: "woman portrait"
+    imageHint: "woman paris"
   },
   {
     name: "Marc D.",
-    title: "Investisseur immobilier",
-    quote: "TrustHome est un partenaire fiable et professionnel. Leur approche de l'exploitation de biens est innovante et très avantageuse pour les propriétaires.",
+    title: "Investisseur (plusieurs appartements en Île-de-France)",
+    quote: "En tant qu'investisseur avec plusieurs appartements en Île-de-France, TrustHome a simplifié ma vie. Leur modèle d'exploitation est performant, les revenus sont garantis et mes biens sont valorisés. Un partenaire professionnel et fiable que je conseille fortement.",
     avatar: "MD",
     rating: 5,
     image: "https://placehold.co/100x100.png",
-    imageHint: "man portrait"
+    imageHint: "man investor"
   },
   {
     name: "Isabelle B.",
-    title: "Propriétaire d'un studio",
-    quote: "J'étais sceptique au début, mais TrustHome a dépassé toutes mes attentes. Plus de vacances locatives et un service client impeccable.",
+    title: "Propriétaire d'un studio à Lyon (près de la Part-Dieu)",
+    quote: "J'étais un peu sceptique au début, mais TrustHome a transformé la location de mon studio près de la Part-Dieu à Lyon. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées, 5 étoiles méritées !",
     avatar: "IB",
-    rating: 4,
+    rating: 5, // Changé de 4 à 5
     image: "https://placehold.co/100x100.png",
-    imageHint: "woman smiling"
+    imageHint: "woman lyon"
   },
 ];
 
