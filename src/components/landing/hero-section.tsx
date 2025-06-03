@@ -12,7 +12,9 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
-              Louez votre bien en toute confiance à TrustHome : <span className="text-accent">Votre locataire</span> qui vous fait Bénéficiez d'un <span className="text-accent">revenu passif réellement passif</span>!
+              Louez votre bien en toute confiance
+              <br />
+              TrustHome : <span className="text-accent">Votre locataire</span> qui vous fait Bénéficiez d'un <span className="text-accent">revenu passif réellement passif</span>!
             </h1>
             <p className="text-lg md:text-xl text-foreground mb-4">
               Louer son appartement ou sa maison peut vite devenir une source de stress : retards de paiement, dégradations coûteuses, et la crainte constante des squatteurs peuvent transformer votre investissement en cauchemar.
