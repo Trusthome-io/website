@@ -6,17 +6,17 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Sophie L.",
-    title: "Propriétaire d'un T2 à Paris (Le Marais)",
-    quote: "Mon T2 dans le Marais est entre de bonnes mains avec TrustHome. Plus de stress lié à la gestion locative, loyers reçus à date fixe et mon bien est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
+    title: "Propriétaire d'un T2 à Saint-Germain-en-Laye",
+    quote: "Mon T2 lumineux à Saint-Germain-en-Laye, avec son petit balcon, est entre de bonnes mains avec TrustHome. Plus de stress lié à la gestion locative, loyers reçus à date fixe et mon bien est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
     avatar: "SL",
     rating: 5,
     image: "https://placehold.co/100x100.png",
-    imageHint: "woman paris"
+    imageHint: "woman apartment"
   },
   {
     name: "Marc D.",
     title: "Investisseur (plusieurs appartements en Île-de-France)",
-    quote: "En tant qu'investisseur avec plusieurs appartements en Île-de-France, TrustHome a simplifié ma vie. Leur modèle d'exploitation est performant, les revenus sont garantis et mes biens sont valorisés. Un partenaire professionnel et fiable que je conseille fortement.",
+    quote: "En tant qu'investisseur avec plusieurs appartements – un grand studio à Versailles et un deux-pièces à Neuilly – TrustHome a simplifié ma vie. Leur modèle d'exploitation est performant, les revenus sont garantis et mes biens sont valorisés. Un partenaire professionnel et fiable que je conseille fortement.",
     avatar: "MD",
     rating: 5,
     image: "https://placehold.co/100x100.png",
@@ -24,13 +24,22 @@ const testimonials = [
   },
   {
     name: "Isabelle B.",
-    title: "Propriétaire d'un studio à Lyon (près de la Part-Dieu)",
-    quote: "J'étais un peu sceptique au début, mais TrustHome a transformé la location de mon studio près de la Part-Dieu à Lyon. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées, 5 étoiles méritées !",
+    title: "Propriétaire d'un studio à Tours",
+    quote: "J'étais un peu sceptique au début, mais TrustHome a transformé la location de mon studio meublé avec goût dans le centre de Tours. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées, 5 étoiles méritées !",
     avatar: "IB",
-    rating: 5, // Changé de 4 à 5
+    rating: 5,
     image: "https://placehold.co/100x100.png",
-    imageHint: "woman lyon"
+    imageHint: "woman city"
   },
+  {
+    name: "David P.",
+    title: "Propriétaire d'une maison de ville à Rouen",
+    quote: "J'avais des appréhensions à louer ma maison de ville avec petit jardin à Rouen pendant mon expatriation. TrustHome m'a offert une solution clé en main : loyer versé rubis sur l'ongle, et ma maison est entretenue comme si j'y étais. Une sérénité inestimable !",
+    avatar: "DP",
+    rating: 5,
+    image: "https://placehold.co/100x100.png",
+    imageHint: "man house"
+  }
 ];
 
 export function TestimonialsSection() {
