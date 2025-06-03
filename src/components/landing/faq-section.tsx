@@ -26,7 +26,7 @@ const faqItems = [
   },
   {
     question: "Comment TrustHome sélectionne les occupants ?",
-    answer: "TrustHome est votre unique locataire. Nous accueillons ensuite nos partenaires professionnels et voyageurs soigneusement vérifiés. Vous n'avez aucune interaction directe avec les occupants finaux.",
+    answer: "TrustHome est votre unique locataire. Nous accueillons ensuite nos partenaires professionnels et voyageurs soigneusement vérifiés.",
   },
   {
     question: "Quelle est la durée typique d'un contrat avec TrustHome ?",
