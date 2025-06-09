@@ -18,9 +18,9 @@ export default function HomePage() {
         <StorytellingSection />
         <ProcessSection />
         <ComparisonSection />
+        <FaqSection />
         <LeadCaptureForm />
         <TestimonialsSection />
-        <FaqSection />
       </main>
       <Footer />
     </div>
