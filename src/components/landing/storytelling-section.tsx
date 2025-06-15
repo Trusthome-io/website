@@ -8,7 +8,7 @@ export function StorytellingSection() {
         <div className="text-center mb-12">
           <ShieldAlert className="h-12 w-12 text-primary mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">
-            La Location : Un Chemin Parsemé d'Embûches ?
+            Location Traditionnelle : Entre attentes et réalités contraignantes
           </h2>
         </div>
         <div className="max-w-3xl mx-auto space-y-6 text-lg text-foreground">
