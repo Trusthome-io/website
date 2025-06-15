@@ -12,7 +12,7 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
-              TrustHome <span className="text-accent">Votre locataire</span> qui vous fait bénéficiez d'un <span className="text-accent">revenu passif réellement passif</span>
+              TrustHome est <span className="text-accent">votre locataire</span> qui vous fait bénéficier d'un <span className="text-accent">revenu passif réellement passif</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground mb-8">
               Notre mission : offrir aux propriétaires la rentabilité locative sans les contraintes.
