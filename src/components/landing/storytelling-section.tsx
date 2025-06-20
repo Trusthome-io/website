@@ -19,13 +19,13 @@ export function StorytellingSection() {
               Louer son appartement ou sa maison peut vite devenir une source de stress : retards de paiement, dégradations coûteuses, et la crainte constante des squatteurs peuvent transformer votre investissement en cauchemar.
             </p>
             <p>
-              Chez TrustHome, nous comprenons ces défis. C'est pourquoi nous devenons votre unique locataire professionnel.
+              Chez TrustHome, nous comprenons ces défis. C&apos;est pourquoi nous devenons votre unique locataire professionnel.
             </p>
             <p>
-              Nous vous garantissons un loyer fixe, versé ponctuellement, prenons en charge l'exploitation, l'entretien et la valorisation de votre bien, et vous offrons une tranquillité d'esprit totale.
+              Nous vous garantissons un loyer fixe, versé ponctuellement, prenons en charge l&apos;exploitation, l&apos;entretien et la valorisation de votre bien, et vous offrons une tranquillité d&apos;esprit totale.
             </p>
             <p className="font-semibold text-accent text-xl">
-              Fini les tracas, vous n'avez plus qu'à encaisser votre loyer en toute sérénité.
+              Fini les tracas, vous n&apos;avez plus qu&apos;à encaisser votre loyer en toute sérénité.
             </p>
           </div>
           

@@ -5,28 +5,28 @@ import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
 const comparisonData = [
   {
     feature: "Stabilité Financière & Économies",
-    classic: { text: "Risque d'impayés, frais d'agence (5-10%), coût d'Assurance Loyers Impayés (2-4%). Vacance locative possible.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Loyer garanti à date fixe, même si vacant, et aucune vacance locative grâce à nos bails. Zéro frais annexes, économie sur la GLI.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    classic: { text: "Risque d'impayés, frais d'agence (5-10%), coût d'Assurance Loyers Impayés (2-4%). Vacance locative possible.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
+    trusthome: { text: "Loyer garanti à date fixe, même si vacant, et aucune vacance locative grâce à nos bails. Zéro frais annexes, économie sur la GLI.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
   },
   {
     feature: "Sécurité Juridique & Flexibilité",
-    classic: { text: "Risque de squatteur, bail rigide avec préavis longs.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire et lui permet de mettre fin au contrat quand il le veut). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    classic: { text: "Risque de squatteur, bail rigide avec préavis longs.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
+    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire et lui permet de mettre fin au contrat quand il le veut). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
   },
   {
     feature: "Entretien & Valorisation du Bien",
-    classic: { text: "Souvent à la charge du propriétaire (temps et argent). Bien fréquemment rendu en mauvais état avec usure marquée.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "En tant que locataire, TrustHome assure : nettoyage pro régulier, embellissements (peinture, déco), petites réparations, et une maintenance proactive pour anticiper l'usure. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    classic: { text: "Souvent à la charge du propriétaire (temps et argent). Bien fréquemment rendu en mauvais état avec usure marquée.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
+    trusthome: { text: "En tant que locataire, TrustHome assure : nettoyage pro régulier, embellissements (peinture, déco), petites réparations, et une maintenance proactive pour anticiper l'usure. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
   },
   {
     feature: "Tranquillité d'Esprit & Zéro Charge Mentale",
-    classic: { text: "Soucis des imprévus, relations locataires complexes, charge administrative.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Aucune implication quotidienne, un seul interlocuteur dédié : TrustHome, votre locataire. Sérénité maximale.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    classic: { text: "Soucis des imprévus, relations locataires complexes, charge administrative.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
+    trusthome: { text: "Aucune implication quotidienne, un seul interlocuteur dédié : TrustHome, votre locataire. Sérénité maximale.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
   },
   {
     feature: "Levier pour Projets Futurs",
-    classic: { text: "Revenus locatifs parfois vus avec prudence par les banques.", icon: <XCircle className="h-6 w-6 text-destructive" /> },
-    trusthome: { text: "Revenus garantis par TrustHome et bail solide, reconnus et valorisés pour vos financements futurs.", icon: <CheckCircle2 className="h-6 w-6 text-success" /> },
+    classic: { text: "Revenus locatifs parfois vus avec prudence par les banques.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
+    trusthome: { text: "Revenus garantis par TrustHome et bail solide, reconnus et valorisés pour vos financements futurs.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
   },
 ];
 
@@ -35,7 +35,7 @@ export function ComparisonSection() {
     <section className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <HelpCircle className="h-12 w-12 text-primary mx-auto mb-4" />
+          <HelpCircle className="h-8 w-8 text-primary mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">
             Pourquoi choisir TrustHome comme locataire ?
           </h2>

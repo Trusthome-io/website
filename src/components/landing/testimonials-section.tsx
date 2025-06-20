@@ -75,7 +75,7 @@ export function TestimonialsSection() {
                     <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/50'}`} />
                   ))}
                 </div>
-                <p className="text-foreground italic">"{testimonial.quote}"</p>
+                <p className="text-foreground italic">&ldquo;{testimonial.quote}&rdquo;</p>
               </CardContent>
             </Card>
           ))}

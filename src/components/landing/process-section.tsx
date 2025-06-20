@@ -39,7 +39,7 @@ export function ProcessSection() {
             Notre Processus Simplifié
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment TrustHome, en devenant votre locataire, transforme l'exploitation de votre bien en une expérience sereine et profitable.
+            Découvrez comment TrustHome, en devenant votre locataire, transforme l&apos;exploitation de votre bien en une expérience sereine et profitable.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
