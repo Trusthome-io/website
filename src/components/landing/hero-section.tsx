@@ -33,19 +33,19 @@ export function HeroSection() {
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <Image
-              src="https://placehold.co/600x400.png"
-              alt="Intérieur d'appartement moderne et lumineux, symbolisant la sérénité et la valorisation par TrustHome"
+              src="/img/salon.jpg"
+              alt="Salon moderne et lumineux, symbolisant la sérénité et la valorisation par TrustHome"
               width={600}
               height={400}
-              className="rounded-lg shadow-2xl relative"
-              data-ai-hint="modern apartment serenity"
+              className="rounded-lg shadow-2xl relative object-cover"
+              priority
             />
           </div>
         </div>
         <div className="mt-16 lg:mt-24 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <CalendarCheck className="h-10 w-10 text-primary" />
+              <CalendarCheck className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-xl">Loyer Garanti</CardTitle>
             </CardHeader>
             <CardContent>
@@ -54,7 +54,7 @@ export function HeroSection() {
           </Card>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <ShieldCheck className="h-10 w-10 text-primary" />
+              <ShieldCheck className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-xl">Zéro Tracas</CardTitle>
             </CardHeader>
             <CardContent>
@@ -63,7 +63,7 @@ export function HeroSection() {
           </Card>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <Award className="h-10 w-10 text-primary" />
+              <Award className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-xl">Valorisation & Contrôle</CardTitle>
             </CardHeader>
             <CardContent>
@@ -72,7 +72,7 @@ export function HeroSection() {
           </Card>
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <TrendingUp className="h-10 w-10 text-primary" />
+              <TrendingUp className="h-8 w-8 text-primary" />
               <CardTitle className="font-headline text-xl">Levier Financier</CardTitle>
             </CardHeader>
             <CardContent>
