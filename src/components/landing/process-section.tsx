@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ClipboardList, FileSearch, Handshake, KeyRound, Award } from "lucide-react";
+import { ClipboardList, FileSearch, Handshake, KeyRound, Award, Calculator } from "lucide-react";
 
 const processSteps = [
   {
@@ -10,6 +10,11 @@ const processSteps = [
   },
   {
     icon: FileSearch,
+    title: "Visite & Inspection",
+    description: "Nous organisons une visite de votre bien pour mieux comprendre ses spécificités et son potentiel.",
+  },
+  {
+    icon: Calculator,
     title: "Évaluation & Proposition",
     description: "Notre équipe évalue votre bien et vous fait une proposition de location compétitive et transparente.",
   },

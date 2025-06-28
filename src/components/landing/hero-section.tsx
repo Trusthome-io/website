@@ -9,13 +9,14 @@ export function HeroSection() {
   return (
     <section className="py-12 md:py-20 lg:py-28 bg-gradient-to-br from-background to-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
-              TrustHome est <span className="text-accent">votre locataire</span> qui vous fait bénéficier d&apos;un <span className="text-accent">revenu passif réellement passif</span>
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-center">
+          <div className="md:col-span-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary mb-8 leading-tight">
+              <span className="text-accent text-4xl md:text-5xl lg:text-6xl block mb-4">Notre mission :</span>
+              Offrir aux propriétaires la rentabilité locative sans les contraintes
             </h1>
-            <p className="text-lg md:text-xl text-foreground mb-8">
-              Notre mission : offrir aux propriétaires la rentabilité locative sans les contraintes.
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+              TrustHome devient votre locataire longue durée et vous verse un loyer garanti mensuellement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -30,14 +31,14 @@ export function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="relative group">
+          <div className="relative group md:col-span-1">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <Image
               src="/img/salon.jpg"
               alt="Salon moderne et lumineux, symbolisant la sérénité et la valorisation par TrustHome"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-2xl relative object-cover"
+              width={400}
+              height={300}
+              className="rounded-lg shadow-2xl relative object-cover w-full"
               priority
             />
           </div>

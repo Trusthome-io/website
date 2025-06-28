@@ -49,13 +49,13 @@ export function ComparisonSection() {
               <table className="min-w-full divide-y divide-border">
                 <thead className="bg-muted/50">
                   <tr>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-primary tracking-wider font-headline">
+                    <th scope="col" className="px-6 py-6 text-left text-sm font-semibold text-primary tracking-wider font-headline w-1/4">
                       Avantage Clé
                     </th>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-primary tracking-wider font-headline">
+                    <th scope="col" className="px-6 py-6 text-left text-sm font-semibold text-primary tracking-wider font-headline w-3/8">
                       Location Classique
                     </th>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-primary tracking-wider font-headline">
+                    <th scope="col" className="px-6 py-6 text-left text-sm font-semibold text-primary tracking-wider font-headline w-3/8">
                       Avec TrustHome (Votre Locataire)
                     </th>
                   </tr>
@@ -63,19 +63,19 @@ export function ComparisonSection() {
                 <tbody className="bg-card divide-y divide-border">
                   {comparisonData.map((item, index) => (
                     <tr key={index} className={index % 2 === 0 ? "bg-card" : "bg-muted/30"}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground align-top">
+                      <td className="px-6 py-6 text-sm font-semibold text-foreground align-top w-1/4">
                         {item.feature}
                       </td>
-                      <td className="px-6 py-4 whitespace-normal text-sm text-foreground align-top">
-                        <div className="flex items-start sm:items-center space-x-2">
-                          {item.classic.icon}
-                          <span>{item.classic.text}</span>
+                      <td className="px-6 py-6 text-sm text-foreground align-top w-3/8">
+                        <div className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 mt-0.5">{item.classic.icon}</div>
+                          <span className="leading-relaxed">{item.classic.text}</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-normal text-sm text-foreground align-top">
-                        <div className="flex items-start sm:items-center space-x-2">
-                          {item.trusthome.icon}
-                          <span>{item.trusthome.text}</span>
+                      <td className="px-6 py-6 text-sm text-foreground align-top w-3/8">
+                        <div className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 mt-0.5">{item.trusthome.icon}</div>
+                          <span className="leading-relaxed">{item.trusthome.text}</span>
                         </div>
                       </td>
                     </tr>
