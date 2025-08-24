@@ -1,0 +1,50 @@
+name: Deploy to IONOS Space
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+        lfs: false
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linting
+      run: npm run lint
+
+    - name: Run type checking
+      run: npm run typecheck
+
+    - name: Build Next.js app
+      run: npm run build
+      env:
+        NODE_ENV: production
+        NEXT_TELEMETRY_DISABLED: 1
+
+    - name: Deploy to IONOS Space
+      uses: ionos-deploy-now/deploy-to-ionos-action@v2
+      with:
+        api-key: ${{ secrets.IONOS_API_KEY }}
+        bootstrap-deploy: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && github.run_number == 1 }}
+        branch-id: ${{ github.ref_name }}
+        dist-folder: out
+        project-id: ${{ secrets.IONOS_PROJECT_ID }}
+        remote-host: ${{ secrets.IONOS_REMOTE_HOST }}
+        service-host: api-eu.ionos.space
+        storage-quota: 2048
