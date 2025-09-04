@@ -9,53 +9,58 @@
 @layer base {
   :root {
     --background: 0 0% 100%; /* Pure white background */
-    --foreground: 222.2 84% 4.9%; /* Almost black text */
+    --foreground: 225 15% 12%; /* Rich dark text #1f2023 */
 
     --card: 0 0% 100%; /* White cards */
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 225 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 15% 12%;
 
-    --primary: 221.2 83.2% 53.3%; /* Professional blue #2563eb */
-    --primary-foreground: 210 40% 98%;
+    /* Modern Electric Blue - Innovative and trustworthy */
+    --primary: 221 83% 53%; /* Electric blue #2563eb */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%; /* Very light blue-gray */
-    --secondary-foreground: 222.2 84% 4.9%;
+    /* Warm neutral secondary */
+    --secondary: 47 9% 95%; /* Warm off-white #f8f7f4 */
+    --secondary-foreground: 225 15% 12%;
 
-    --muted: 210 40% 96%; /* Consistent with secondary */
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 47 9% 95%; /* Consistent with secondary */
+    --muted-foreground: 225 9% 46%;
 
-    --accent: 142.1 76.2% 36.3%; /* Professional green #16a34a */
-    --accent-foreground: 355.7 100% 97.3%;
+    /* Vibrant Orange - Energy and innovation */
+    --accent: 25 95% 53%; /* Vibrant orange #f97316 */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --success: 142.1 76.2% 36.3%; /* Same as accent for consistency */
-    --success-foreground: 355.7 100% 97.3%;
+    /* Success Green - Trust and growth */
+    --success: 158 64% 52%; /* Modern emerald #10b981 */
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%; /* Light border */
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%; /* Primary color for focus rings */
+    --border: 47 13% 89%; /* Warm neutral border */
+    --input: 47 13% 89%;
+    --ring: 221 83% 53%; /* Blue focus rings for modern feel */
 
     --radius: 0.75rem; /* Slightly more rounded for modern look */
 
-    --chart-1: 221.2 83.2% 53.3%;
-    --chart-2: 142.1 76.2% 36.3%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    /* Updated chart colors for better brand consistency */
+    --chart-1: 38 92% 50%; /* Gold */
+    --chart-2: 225 83% 24%; /* Navy */
+    --chart-3: 158 64% 52%; /* Emerald */
+    --chart-4: 271 91% 65%; /* Purple */
+    --chart-5: 18 95% 62%; /* Orange */
 
-    /* Sidebar variables */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 222.2 84% 4.9%;
-    --sidebar-primary: 221.2 83.2% 53.3%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 142.1 76.2% 36.3%;
-    --sidebar-accent-foreground: 355.7 100% 97.3%;
-    --sidebar-border: 214.3 31.8% 91.4%;
-    --sidebar-ring: 221.2 83.2% 53.3%;
+    /* Sidebar variables updated with new palette */
+    --sidebar-background: 47 9% 95%;
+    --sidebar-foreground: 225 15% 12%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 225 15% 12%;
+    --sidebar-accent: 225 83% 24%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 47 13% 89%;
+    --sidebar-ring: 38 92% 50%;
   }
 
   .dark {
@@ -120,22 +125,24 @@
   .animate-tilt {
     animation: tilt 10s infinite linear;
   }
-  
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-slide-up {
     animation: slideUp 0.8s ease-out;
   }
-  
+
   .animate-fade-in {
     animation: fadeIn 1s ease-out;
   }
 }
 
 @keyframes tilt {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     transform: rotate(0deg);
   }
   25% {
@@ -147,7 +154,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -173,4 +181,40 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(245, 158, 11, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.8), 0 0 30px rgba(245, 158, 11, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Premium shimmer effect for CTAs */
+.shimmer {
+  background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
 }

@@ -1,38 +1,43 @@
-
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { HeroSection } from "@/components/landing/hero-section";
-import { StorytellingSection } from "@/components/landing/storytelling-section";
-import { ProcessSection } from "@/components/landing/process-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { FaqSection } from "@/components/landing/faq-section";
-import { LeadCaptureForm } from "@/components/landing/lead-capture-form";
-import { ComparisonSection } from "@/components/landing/comparison-section";
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
+import { HeroSection } from '@/components/landing/hero-section';
+import { StorytellingSection } from '@/components/landing/storytelling-section';
+import { ProcessSection } from '@/components/landing/process-section';
+import { VisionSection } from '@/components/landing/vision-section';
+import { SignupSection } from '@/components/landing/signup-section';
+import { FaqSection } from '@/components/landing/faq-section';
+import { LeadCaptureForm } from '@/components/landing/lead-capture-form';
+import { ComparisonSection } from '@/components/landing/comparison-section';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className='flex min-h-screen flex-col'>
       <Header />
-      <main className="flex-grow">
-        <section id="hero">
+      <main className='flex-grow'>
+        <section id='hero'>
           <HeroSection />
         </section>
-        <section id="storytelling">
+        <section id='storytelling'>
           <StorytellingSection />
         </section>
-        <section id="process">
+        <section id='process'>
           <ProcessSection />
         </section>
-        <section id="comparison">
+        <section id='comparison'>
           <ComparisonSection />
         </section>
-        <section id="faq">
+        <section id='faq'>
           <FaqSection />
         </section>
-        <section id="contact">
+        <section id='contact'>
           <LeadCaptureForm />
         </section>
-        <TestimonialsSection />
+        <section id='vision'>
+          <VisionSection />
+        </section>
+        <section id='signup'>
+          <SignupSection />
+        </section>
       </main>
       <Footer />
     </div>

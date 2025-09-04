@@ -84,7 +84,7 @@ export const footerLinks = {
   legal: [
     { title: 'Mentions légales', href: '/legal' },
     { title: 'Politique de confidentialité', href: '/privacy' },
-    { title: 'Conditions d\'utilisation', href: '/terms' },
+    { title: "Conditions d'utilisation", href: '/terms' },
     { title: 'CGV', href: '/cgv' },
   ],
 } as const;

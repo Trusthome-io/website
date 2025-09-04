@@ -15,16 +15,16 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function formatPhoneNumber(phone: string): string {
   const cleaned = phone.replace(/\D/g, '');
-  
+
   if (cleaned.startsWith('33')) {
     const formatted = cleaned.substring(2);
     return `+33 ${formatted.substring(0, 1)} ${formatted.substring(1, 3)} ${formatted.substring(3, 5)} ${formatted.substring(5, 7)} ${formatted.substring(7, 9)}`;
   }
-  
+
   if (cleaned.startsWith('0')) {
     return `${cleaned.substring(0, 2)} ${cleaned.substring(2, 4)} ${cleaned.substring(4, 6)} ${cleaned.substring(6, 8)} ${cleaned.substring(8, 10)}`;
   }
-  
+
   return phone;
 }
 
@@ -122,7 +122,7 @@ export function isClient(): boolean {
  */
 export function getLocalStorage(key: string, defaultValue: string = ''): string {
   if (!isClient()) return defaultValue;
-  
+
   try {
     const item = localStorage.getItem(key);
     return item ?? defaultValue;
@@ -137,7 +137,7 @@ export function getLocalStorage(key: string, defaultValue: string = ''): string 
  */
 export function setLocalStorage(key: string, value: string): void {
   if (!isClient()) return;
-  
+
   try {
     localStorage.setItem(key, value);
   } catch (error) {
@@ -150,13 +150,13 @@ export function setLocalStorage(key: string, value: string): void {
  */
 export function scrollToElement(elementId: string, offset: number = 80): void {
   if (!isClient()) return;
-  
+
   const element = document.getElementById(elementId.replace('#', ''));
   if (!element) return;
-  
+
   const elementPosition = element.getBoundingClientRect().top;
   const offsetPosition = elementPosition + window.pageYOffset - offset;
-  
+
   window.scrollTo({
     top: offsetPosition,
     behavior: 'smooth',
