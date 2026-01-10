@@ -6,39 +6,57 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Sophie L.",
-    title: "Propriétaire d'un T2 à Saint-Germain-en-Laye",
-    quote: "Mon T2 lumineux avec son charmant balcon à Saint-Germain-en-Laye est entre de bonnes mains avec TrustHome. Je n'ai plus à me soucier des retards de paiement ou de la recherche de locataires. Les loyers sont versés à date fixe et mon appartement est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
+    title: "Propriétaire d'un T2 à Levallois-Perret (92)",
+    quote: "Mon T2 lumineux avec son charmant balcon à Levallois-Perret est entre de bonnes mains avec TrustHome. Je n'ai plus à me soucier des retards de paiement ou de la recherche de locataires. Les loyers sont versés à date fixe et mon appartement est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
     avatar: "SL",
     rating: 5,
-    image: "https://placehold.co/100x100.png",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie&backgroundColor=b6e3f4",
     imageHint: "woman apartment"
   },
   {
     name: "Marc D.",
-    title: "Investisseur (appartements à Fontainebleau & St-Germain)",
-    quote: "En tant qu'investisseur avec plusieurs appartements – notamment un grand studio à Fontainebleau et un deux-pièces à Saint-Germain-en-Laye – TrustHome a simplifié ma vie. Leur modèle d'exploitation est performant, les revenus sont garantis et mes biens sont valorisés. Un partenaire professionnel et fiable que je conseille fortement.",
+    title: "Investisseur à Clichy & Paris 17ème (92/75)",
+    quote: "En tant qu'investisseur avec plusieurs appartements – notamment un grand studio à Clichy et un deux-pièces à Paris 17ème – TrustHome a simplifié ma vie. Leur modèle d'exploitation est performant, les revenus sont garantis et mes biens sont valorisés. Un partenaire professionnel et fiable que je conseille fortement.",
     avatar: "MD",
     rating: 5,
-    image: "https://placehold.co/100x100.png",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marc&backgroundColor=c0aede",
     imageHint: "man investor"
   },
   {
     name: "Isabelle B.",
-    title: "Propriétaire d'un studio à Tours",
-    quote: "J'étais un peu sceptique au début, mais TrustHome a transformé la location de mon studio meublé avec goût dans le centre de Tours. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées, 5 étoiles méritées pour la gestion de mon bien de A à Z !",
+    title: "Propriétaire d'un studio à Asnières-sur-Seine (92)",
+    quote: "J'étais un peu sceptique au début, mais TrustHome a transformé la location de mon studio meublé avec goût à Asnières. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées, 5 étoiles méritées pour la gestion de mon bien de A à Z !",
     avatar: "IB",
     rating: 5,
-    image: "https://placehold.co/100x100.png",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabelle&backgroundColor=ffd5dc",
     imageHint: "woman city"
   },
   {
     name: "David P.",
-    title: "Propriétaire d'une maison de ville à Rouen",
-    quote: "J'avais des appréhensions à louer ma maison de ville avec petit jardin à Rouen pendant mon expatriation. TrustHome m'a offert une solution clé en main : loyer versé rubis sur l'ongle, et ma maison est entretenue comme si j'y étais. Une sérénité inestimable, surtout pour un bien de cette taille !",
+    title: "Propriétaire d'une maison à Saint-Ouen (93)",
+    quote: "J'avais des appréhensions à louer ma maison avec petit jardin à Saint-Ouen pendant mon expatriation. TrustHome m'a offert une solution clé en main : loyer versé rubis sur l'ongle, et ma maison est entretenue comme si j'y étais. Une sérénité inestimable, surtout pour un bien de cette taille !",
     avatar: "DP",
     rating: 5,
-    image: "https://placehold.co/100x100.png",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=d1d4f9",
     imageHint: "man house"
+  },
+  {
+    name: "Nathalie M.",
+    title: "Propriétaire d'un T3 à Neuilly-sur-Seine (92)",
+    quote: "Grâce à TrustHome, mon T3 à Neuilly génère des revenus stables chaque mois sans aucun souci de gestion. L'équipe est réactive et professionnelle. Je peux enfin profiter de ma retraite sans m'occuper de la location. Un service remarquable que je conseille à tous les propriétaires !",
+    avatar: "NM",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nathalie&backgroundColor=ffdfbf",
+    imageHint: "woman senior"
+  },
+  {
+    name: "Thomas R.",
+    title: "Propriétaire d'un appartement à Paris 8ème (75)",
+    quote: "TrustHome gère mon appartement dans le 8ème arrondissement depuis 6 mois et c'est un sans-faute. Loyer garanti, bien entretenu, reporting régulier. Je regrette de ne pas les avoir connus plus tôt ! Pour les propriétaires qui veulent dormir sur leurs deux oreilles, c'est la solution idéale.",
+    avatar: "TR",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas&backgroundColor=c7ecee",
+    imageHint: "man professional"
   }
 ];
 
