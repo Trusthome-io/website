@@ -6,7 +6,7 @@ import { StorytellingSection } from "@/components/landing/storytelling-section";
 import { ProcessSection } from "@/components/landing/process-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { FaqSection } from "@/components/landing/faq-section";
-import { LeadCaptureForm } from "@/components/landing/lead-capture-form";
+import { ContactSection } from "@/components/landing/contact-section";
 import { ComparisonSection } from "@/components/landing/comparison-section";
 
 export default function HomePage() {
@@ -30,7 +30,7 @@ export default function HomePage() {
           <FaqSection />
         </section>
         <section id="contact">
-          <LeadCaptureForm />
+          <ContactSection />
         </section>
         <TestimonialsSection />
       </main>
