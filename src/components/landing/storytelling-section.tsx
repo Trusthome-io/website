@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function StorytellingSection() {
   const before = [
     "Retards de paiement et impayés récurrents — coût moyen 6 mois de loyer.",
@@ -12,11 +14,11 @@ export function StorytellingSection() {
     "Un contrat flexible rédigé par des avocats, avec clauses de sortie.",
   ];
 
-  const imgLabels = [
-    "photo · salon, lumière naturelle",
-    "photo · cuisine équipée",
-    "photo · salle de bain",
-    "photo · chambre principale",
+  const images = [
+    { src: "/img/salon.jpg", alt: "Salon lumineux — bien géré par Trusthome", label: "salon · lumière naturelle" },
+    { src: "/img/cuisine.jpg", alt: "Cuisine équipée — bien géré par Trusthome", label: "cuisine équipée" },
+    { src: "/img/douche.jpg", alt: "Salle de bain — bien géré par Trusthome", label: "salle de bain" },
+    { src: "/img/masterbedroom.jpg", alt: "Chambre principale — bien géré par Trusthome", label: "chambre principale" },
   ];
 
   return (
@@ -176,26 +178,44 @@ export function StorytellingSection() {
           <div
             style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}
           >
-            {imgLabels.map((label, i) => (
+            {images.map((img, i) => (
               <div
-                key={label}
-                className={`plh ${i === 1 || i === 2 ? "plh-violet" : ""}`}
+                key={img.src}
                 style={{
+                  position: "relative",
                   minHeight: i === 0 || i === 3 ? 280 : 200,
+                  borderRadius: 10,
+                  overflow: "hidden",
                 }}
               >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  sizes="(max-width: 900px) 50vw, 25vw"
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(to top, rgba(26,58,67,0.4) 0%, transparent 45%)",
+                  }}
+                />
                 <span
                   style={{
+                    position: "absolute",
+                    bottom: 10,
+                    left: 12,
                     fontFamily: "var(--font-jetbrains-mono)",
-                    fontSize: 11,
+                    fontSize: 10,
                     letterSpacing: "0.08em",
-                    padding: "10px 12px",
-                    color: "var(--teal-900)",
-                    background: "rgba(250,247,242,0.82)",
-                    borderTopRightRadius: 8,
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.82)",
                   }}
                 >
-                  {label}
+                  {img.label}
                 </span>
               </div>
             ))}

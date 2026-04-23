@@ -144,9 +144,6 @@ export function ComparisonSection() {
                 color: active === i ? "var(--teal-900)" : "var(--ink-500)",
                 fontFamily: "var(--font-space-grotesk)",
                 fontWeight: 500,
-                borderBottom: active === i
-                  ? "2px solid var(--violet-600)"
-                  : "2px solid transparent",
                 marginBottom: -1,
                 whiteSpace: "nowrap",
                 background: "transparent",

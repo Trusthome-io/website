@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const months = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
@@ -155,6 +156,49 @@ export function HeroSection() {
 
           {/* Payout card */}
           <div>
+            {/* Property photo preview */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: 200,
+                borderRadius: 16,
+                overflow: "hidden",
+                marginBottom: 16,
+              }}
+            >
+              <Image
+                src="/img/masterbedroom2.jpg"
+                alt="Bien géré par Trusthome — chambre principale"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                sizes="(max-width: 980px) 100vw, 50vw"
+                priority
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(to top, rgba(26,58,67,0.45) 0%, transparent 50%)",
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  bottom: 12,
+                  left: 14,
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.85)",
+                }}
+              >
+                T2 · Levallois-Perret 92 · Bien géré par Trusthome
+              </span>
+            </div>
+
             <div
               style={{
                 background: "var(--teal-900)",
@@ -256,7 +300,7 @@ export function HeroSection() {
                   const isCurrent = i === 9;
                   return (
                     <div
-                      key={m}
+                      key={i}
                       style={{
                         height: 34,
                         borderRadius: 6,
