@@ -23,9 +23,9 @@ export function Footer() {
     {
       title: "Légal",
       links: [
-        ["Mentions légales", "#"],
-        ["Politique de confidentialité", "#"],
-        ["CGU", "#"],
+        ["Mentions légales", "/mentions-legales"],
+        ["Politique de confidentialité", "/politique-de-confidentialite"],
+        ["CGU", "/cgu"],
       ],
     },
   ];
