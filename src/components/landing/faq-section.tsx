@@ -1,77 +1,179 @@
+"use client";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+import { useState } from "react";
 
-const faqItems = [
+const faqs = [
   {
-    question: "Qu'est-ce que l'exploitation professionnelle de biens avec TrustHome ?",
-    answer: "TrustHome devient votre locataire principal et valorise votre bien en hébergement haut de gamme. Nous garantissons votre loyer et prenons en charge toutes les responsabilités liées à l'occupation et à l'entretien, vous n'avez qu'un seul interlocuteur : TrustHome.",
+    q: "Qu'est-ce que l'exploitation professionnelle de biens avec Trusthome ?",
+    a: "Trusthome devient votre locataire direct. Nous signons un bail avec vous, nous prenons en charge l'exploitation du bien (ménage, maintenance, embellissements), et vous versons un loyer garanti chaque mois, que le bien soit occupé ou non.",
   },
   {
-    question: "Mon loyer est-il garanti même si le bien n'est pas occupé par des voyageurs/professionnels ?",
-    answer: "Absolument. TrustHome, en tant que votre locataire, vous verse le loyer convenu à date fixe chaque mois. C'est notre engagement pour votre tranquillité et la fin des assurances loyers impayés.",
+    q: "Mon loyer est-il garanti même si le bien n'est pas occupé ?",
+    a: "Oui. C'est la promesse fondamentale de Trusthome. Votre loyer est versé le 5 de chaque mois, indépendamment du taux d'occupation du bien. La gestion de la vacance est entièrement de notre ressort.",
   },
   {
-    question: "Qui s'occupe de l'entretien et des réparations ?",
-    answer: "TrustHome, en tant que votre locataire, prend en charge l'entretien courant, les petites réparations, les embellissements (peinture, déco) et plusieurs nettoyages professionnels par semaine. Pour les réparations structurelles majeures (ex: chaudière, toiture), nous vous consultons selon les termes du contrat de location.",
+    q: "Qui s'occupe de l'entretien et des réparations ?",
+    a: "Trusthome prend en charge l'entretien courant, les petites réparations, les nettoyages professionnels et les embellissements réguliers. Vous n'avez pas à intervenir ni à gérer de prestataires. Un seul interlocuteur, zéro charge mentale.",
   },
   {
-    question: "Quels sont les frais avec TrustHome ?",
-    answer: "Zéro frais cachés. Contrairement à une location classique impliquant une agence, il n'y a pas de frais d'agence ou de frais de service prélevés sur vos loyers, et vous économisez le coût d'une assurance loyers impayés.",
+    q: "Quels sont les frais avec Trusthome ?",
+    a: "Aucuns frais d'agence, aucune GLI. Vous signez directement avec Trusthome. Notre modèle économique repose sur l'exploitation locative du bien, pas sur des commissions prélevées sur votre loyer.",
   },
   {
-    question: "Comment TrustHome sélectionne les occupants ?",
-    answer: "TrustHome est votre unique locataire. Nous accueillons ensuite nos partenaires professionnels et voyageurs soigneusement vérifiés.",
+    q: "Quelle est la durée typique d'un contrat ?",
+    a: "Nos contrats sont généralement signés pour 1 à 3 ans, avec des clauses de sortie négociées en amont pour les deux parties. Chaque contrat est rédigé par nos avocats et adapté à votre situation.",
   },
   {
-    question: "Quelle est la durée typique d'un contrat de location avec TrustHome ?",
-    answer: "Nos contrats de location, rédigés par des avocats, sont flexibles (généralement 1 à 3 ans, renouvelables) et peuvent inclure des clauses de sortie ou de revente anticipée pour s'adapter à vos projets.",
+    q: "Comment Trusthome me protège-t-il du risque de squatteurs ?",
+    a: "En tant que locataire professionnel, Trusthome ne présente aucun risque de squat. Notre statut juridique et nos garanties bancaires vous offrent une sécurité que n'offre pas un locataire particulier.",
   },
   {
-    question: "Que se passe-t-il en cas de dégradations du bien ?",
-    answer: "TrustHome, en tant que votre locataire, est responsable de l'état du bien. En plus des assurances adéquates, notre modèle inclut un entretien constant et des remises en état régulières pour valoriser votre propriété.",
-  },
-  {
-    question: "Comment TrustHome me protège-t-il du risque de squatteurs ?",
-    answer: "Avec TrustHome comme locataire, ce risque est inexistant. Nous sommes votre unique locataire. Les professionnels et voyageurs que nous hébergeons n'ont aucun droit au bail direct avec vous et sont présents pour des durées contractuelles définies avec nous.",
-  },
-  {
-    question: "TrustHome peut-il m'aider à obtenir un prêt bancaire ?",
-    answer: "Oui. Les revenus locatifs garantis et réguliers versés par TrustHome, ainsi que la solidité de notre bail de location, sont des éléments très appréciés des banques et peuvent faciliter l'obtention de financements pour vos futurs projets immobiliers.",
+    q: "Trusthome peut-il m'aider à obtenir un prêt bancaire ?",
+    a: "Oui. Nos baux sécurisés sont reconnus par les banques partenaires, qui retiennent généralement 95 à 100% de vos revenus locatifs dans votre capacité d'emprunt. C'est un levier significatif pour financer vos investissements futurs.",
   },
 ];
 
 export function FaqSection() {
+  const [open, setOpen] = useState<number | null>(0);
+
   return (
-    <section className="py-12 md:py-20 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <HelpCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">
-            Questions Fréquemment Posées
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Trouvez ici les réponses à vos interrogations sur le partenariat avec TrustHome.
-          </p>
+    <section
+      id="faq"
+      style={{
+        padding: "120px 0",
+        borderTop: "1px solid var(--line)",
+        background: "var(--cream-50)",
+      }}
+    >
+      <div style={{ maxWidth: 1360, margin: "0 auto", padding: "0 40px" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1.5fr",
+            gap: 72,
+            marginBottom: 56,
+          }}
+          className="th-sec-head"
+        >
+          <div className="eyebrow">— FAQ</div>
+          <div>
+            <h2>Questions fréquentes.</h2>
+          </div>
         </div>
-        <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
-          {faqItems.map((item, index) => (
-            <AccordionItem value={`item-${index}`} key={index} className="border-b-primary/20">
-              <AccordionTrigger className="text-left font-headline text-lg hover:text-accent py-4">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4 text-base">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1.2fr",
+            gap: 72,
+            alignItems: "start",
+          }}
+          className="th-faq-grid"
+        >
+          {/* Illustration */}
+          <div>
+            <div
+              className="plh plh-violet"
+              style={{ aspectRatio: "4/5", minHeight: 0 }}
+            >
+              <span
+                style={{
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.08em",
+                  padding: "10px 12px",
+                  color: "var(--teal-900)",
+                  background: "rgba(250,247,242,0.82)",
+                  borderTopRightRadius: 8,
+                }}
+              >
+                illustration · sérénité
+              </span>
+            </div>
+          </div>
+
+          {/* Accordion */}
+          <div
+            style={{
+              borderTop: "1px solid var(--line)",
+            }}
+          >
+            {faqs.map((faq, i) => {
+              const isOpen = open === i;
+              return (
+                <div
+                  key={i}
+                  style={{ borderBottom: "1px solid var(--line)" }}
+                >
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    style={{
+                      width: "100%",
+                      textAlign: "left",
+                      padding: "22px 0",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: 20,
+                      fontFamily: "var(--font-space-grotesk)",
+                      fontSize: 19,
+                      fontWeight: 500,
+                      color: isOpen ? "var(--violet-600)" : "var(--teal-900)",
+                      background: "transparent",
+                      border: "none",
+                      cursor: "pointer",
+                      transition: "color .15s ease",
+                    }}
+                  >
+                    <span>{faq.q}</span>
+                    <span
+                      style={{
+                        fontSize: 28,
+                        fontFamily: "var(--font-space-grotesk)",
+                        fontWeight: 300,
+                        color: "var(--violet-600)",
+                        transition: "transform .3s ease",
+                        transform: isOpen ? "rotate(45deg)" : "none",
+                        flexShrink: 0,
+                        lineHeight: 1,
+                        display: "inline-block",
+                      }}
+                    >
+                      +
+                    </span>
+                  </button>
+                  <div
+                    style={{
+                      maxHeight: isOpen ? 400 : 0,
+                      overflow: "hidden",
+                      transition: "max-height .35s ease",
+                    }}
+                  >
+                    <div
+                      style={{
+                        padding: "0 0 24px",
+                        color: "var(--ink-500)",
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                        maxWidth: "62ch",
+                      }}
+                    >
+                      {faq.a}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .th-faq-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .th-sec-head { grid-template-columns: 1fr !important; gap: 20px !important; }
+        }
+      `}</style>
     </section>
   );
 }

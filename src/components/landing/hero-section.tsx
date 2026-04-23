@@ -1,87 +1,371 @@
+"use client";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarCheck, ShieldCheck, ArrowRight, Award, TrendingUp } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const months = ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
 export function HeroSection() {
+  const [amount, setAmount] = useState(2340);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAmount((a) => {
+        const diff = 2340 - a;
+        if (Math.abs(diff) < 1) return 2340;
+        return a + diff * 0.1;
+      });
+    }, 50);
+    return () => clearInterval(id);
+  }, []);
+
+  const fmt = (n: number) =>
+    Math.round(n)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0");
+
   return (
-    <section className="py-12 md:py-20 lg:py-28 bg-gradient-to-br from-background to-secondary/30">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-center">
-          <div className="md:col-span-2">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary mb-8 leading-tight">
-              <span className="text-accent text-4xl md:text-5xl lg:text-6xl block mb-4">Notre mission :</span>
-              Offrir aux propriétaires la rentabilité locative sans les contraintes
+    <section
+      style={{
+        paddingTop: 80,
+        paddingBottom: 60,
+        background: "var(--cream-50)",
+        overflow: "hidden",
+      }}
+    >
+      <div style={{ maxWidth: 1360, margin: "0 auto", padding: "0 40px" }}>
+        <div className="eyebrow">— Pour propriétaires en Île-de-France</div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.35fr 1fr",
+            gap: 72,
+            alignItems: "end",
+            marginTop: 22,
+          }}
+          className="th-hero-grid"
+        >
+          {/* Left column */}
+          <div>
+            <h1 style={{ margin: 0 }}>
+              <span style={{ display: "block" }}>Un loyer</span>
+              <span style={{ display: "block" }}>
+                <span
+                  className="squiggle"
+                  style={{
+                    color: "var(--violet-600)",
+                    fontStyle: "italic",
+                    fontWeight: 400,
+                    fontFamily: "'PT Sans', serif",
+                  }}
+                >
+                  garanti
+                </span>
+                ,
+              </span>
+              <span style={{ display: "block" }}>chaque 5 du mois.</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              TrustHome devient votre locataire longue durée et vous verse un loyer garanti mensuellement.
+
+            <p
+              style={{
+                maxWidth: 520,
+                color: "var(--ink-700)",
+                fontSize: 18,
+                marginTop: 28,
+                lineHeight: 1.55,
+              }}
+            >
+              Trusthome devient votre locataire longue durée. Nous prenons en
+              charge l&apos;entretien, les imprévus, et les mauvaises surprises.
+              Vous encaissez votre loyer — même les mois où le bien est vacant.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="#contact">
-                  Démarrez avec TrustHome <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                <Link href="#process">
-                  Comment ça marche ?
-                </Link>
-              </Button>
+
+            <div
+              style={{
+                marginTop: 36,
+                display: "flex",
+                gap: 12,
+                flexWrap: "wrap",
+              }}
+            >
+              <a
+                href="#estimator"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "14px 22px",
+                  fontFamily: "var(--font-space-grotesk)",
+                  fontWeight: 500,
+                  fontSize: 15,
+                  borderRadius: 999,
+                  background: "var(--violet-600)",
+                  color: "white",
+                  textDecoration: "none",
+                  transition: "transform .15s ease, background .15s ease",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "var(--violet-700)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "var(--violet-600)";
+                  (e.currentTarget as HTMLElement).style.transform = "none";
+                }}
+              >
+                Estimer mon loyer garanti →
+              </a>
+              <a
+                href="#process"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "14px 22px",
+                  fontFamily: "var(--font-space-grotesk)",
+                  fontWeight: 500,
+                  fontSize: 15,
+                  borderRadius: 999,
+                  background: "transparent",
+                  color: "var(--teal-900)",
+                  border: "1px solid var(--teal-900)",
+                  textDecoration: "none",
+                  transition: "all .15s ease",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "var(--teal-900)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--cream-50)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "transparent";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--teal-900)";
+                }}
+              >
+                Comment ça marche
+              </a>
             </div>
           </div>
-          <div className="relative group md:col-span-1">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <Image
-              src="/img/salon.jpg"
-              alt="Salon moderne et lumineux, symbolisant la sérénité et la valorisation par TrustHome"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-2xl relative object-cover w-full"
-              priority
-            />
+
+          {/* Payout card */}
+          <div>
+            <div
+              style={{
+                background: "var(--teal-900)",
+                color: "var(--cream-50)",
+                borderRadius: 20,
+                padding: 28,
+                position: "relative",
+                overflow: "hidden",
+                boxShadow: "0 40px 80px -30px rgba(26,58,67,0.5)",
+              }}
+            >
+              {/* Gradient overlay */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "radial-gradient(600px 200px at 100% 0%, rgba(132,101,153,0.35), transparent 60%), radial-gradient(400px 300px at 0% 100%, rgba(70,132,153,0.4), transparent 60%)",
+                  pointerEvents: "none",
+                }}
+              />
+
+              {/* Header row */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  position: "relative",
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  fontSize: 11,
+                  color: "var(--teal-300)",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                }}
+              >
+                <span>Virement · Loyer mensuel</span>
+                <span
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                >
+                  <span
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      background: "#8fdc9d",
+                      boxShadow: "0 0 0 4px rgba(143,220,157,0.15)",
+                      animation: "pulse 2s ease-in-out infinite",
+                      display: "inline-block",
+                    }}
+                  />
+                  Programmé
+                </span>
+              </div>
+
+              {/* Amount */}
+              <div
+                style={{
+                  position: "relative",
+                  marginTop: 18,
+                  fontFamily: "var(--font-space-grotesk)",
+                  fontWeight: 500,
+                  fontSize: 68,
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1,
+                  color: "white",
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 4,
+                }}
+              >
+                <span>{fmt(amount)}</span>
+                <span style={{ fontSize: 32, color: "var(--teal-300)" }}>€</span>
+              </div>
+
+              <div
+                style={{
+                  position: "relative",
+                  color: "var(--teal-300)",
+                  marginTop: 6,
+                  fontSize: 14,
+                }}
+              >
+                Versé le 5 du mois · T2, Levallois-Perret 92
+              </div>
+
+              {/* Timeline bars */}
+              <div
+                style={{
+                  position: "relative",
+                  marginTop: 24,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(12, 1fr)",
+                  gap: 6,
+                }}
+              >
+                {months.map((m, i) => {
+                  const isPaid = i < 9;
+                  const isCurrent = i === 9;
+                  return (
+                    <div
+                      key={m}
+                      style={{
+                        height: 34,
+                        borderRadius: 6,
+                        background: isPaid
+                          ? "linear-gradient(180deg, var(--violet-600), var(--violet-700))"
+                          : isCurrent
+                          ? "linear-gradient(180deg, #8fdc9d, #2d7d5a)"
+                          : "rgba(255,255,255,0.08)",
+                        display: "flex",
+                        alignItems: "flex-end",
+                        justifyContent: "center",
+                        paddingBottom: 5,
+                        fontFamily: "var(--font-jetbrains-mono)",
+                        fontSize: 10,
+                        color: isPaid
+                          ? "white"
+                          : isCurrent
+                          ? "#0a1a14"
+                          : "var(--teal-300)",
+                      }}
+                    >
+                      {m}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Footer row */}
+              <div
+                style={{
+                  position: "relative",
+                  marginTop: 22,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: 12,
+                  color: "var(--teal-300)",
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                <span>12 mois · 0 retard</span>
+                <span>28 080 € versés</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-16 lg:mt-24 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <CalendarCheck className="h-8 w-8 text-primary" />
-              <CardTitle className="font-headline text-xl">Loyer Garanti</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Recevez votre loyer chaque mois, à date fixe. Fini les assurances loyers impayés coûteuses et les vacances locatives.</p>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <ShieldCheck className="h-8 w-8 text-primary" />
-              <CardTitle className="font-headline text-xl">Zéro Tracas</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">TrustHome, votre locataire, prend tout en charge : exploitation, entretien, embellissements, réparations. Un seul interlocuteur dédié.</p>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <Award className="h-8 w-8 text-primary" />
-              <CardTitle className="font-headline text-xl">Valorisation & Contrôle</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Votre bien est nettoyé professionnellement, maintenu en parfait état et valorisé. Vous gardez le contrôle avec un contrat flexible.</p>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="flex flex-row items-center gap-4 pb-2">
-              <TrendingUp className="h-8 w-8 text-primary" />
-              <CardTitle className="font-headline text-xl">Levier Financier</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Nos baux solides et vos revenus réguliers sont reconnus par les banques, facilitant vos futurs investissements.</p>
-            </CardContent>
-          </Card>
+
+        {/* Meta bar */}
+        <div
+          style={{
+            marginTop: 72,
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            borderTop: "1px solid var(--line)",
+            borderBottom: "1px solid var(--line)",
+          }}
+          className="th-meta-grid"
+        >
+          {[
+            ["100%", "Loyer garanti mensuel"],
+            ["0 €", "Frais d'agence ou GLI"],
+            ["1–3 ans", "Contrat flexible"],
+            ["48h", "Réponse à votre dossier"],
+          ].map(([k, v], i) => (
+            <div
+              key={v}
+              style={{
+                padding: "20px 24px 20px 0",
+                borderRight: i < 3 ? "1px solid var(--line)" : "none",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-space-grotesk)",
+                  fontSize: 28,
+                  fontWeight: 500,
+                  color: "var(--teal-900)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                {k}
+              </div>
+              <div
+                style={{
+                  fontSize: 12,
+                  color: "var(--ink-500)",
+                  marginTop: 2,
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                {v}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 980px) {
+          .th-hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+        }
+        @media (max-width: 720px) {
+          .th-meta-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </section>
   );
 }

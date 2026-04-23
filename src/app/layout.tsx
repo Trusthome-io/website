@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
-import { PT_Sans, Space_Grotesk } from 'next/font/google';
+import { PT_Sans, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 
 const ptSans = PT_Sans({
   subsets: ['latin'],
@@ -20,6 +20,13 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'TrustHome : Loyer Garanti, Zéro Souci.',
   description: 'Louez votre bien à TrustHome et bénéficiez d\'un revenu garanti et d\'une tranquillité totale.',
@@ -31,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${ptSans.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`${ptSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
         {/* Google Font links are now handled by next/font */}
       </head>

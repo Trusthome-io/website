@@ -1,94 +1,293 @@
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, XCircle, HelpCircle } from "lucide-react";
+import { useState } from "react";
 
-const comparisonData = [
+const tabs = [
   {
-    feature: "Stabilité Financière & Économies",
-    classic: { text: "Risque d'impayés, frais d'agence (5-10%), coût d'Assurance Loyers Impayés (2-4%). Vacance locative possible.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
-    trusthome: { text: "Loyer garanti à date fixe, même si vacant, et aucune vacance locative grâce à nos baux. Zéro frais annexes, économie sur la GLI.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
+    label: "Stabilité financière",
+    left: {
+      title: "Location classique",
+      body: "Risque d'impayés, frais d'agence (5–10%), GLI (2–4%). Vacance locative moyenne de 3 semaines par rotation.",
+      metric: "– 12%",
+      metricLabel: "/ rendement annuel",
+    },
+    right: {
+      title: "Avec Trusthome",
+      body: "Loyer garanti à date fixe, versé même si le bien est vacant. Zéro frais d'agence, zéro GLI. Un bail direct.",
+      metric: "+0%",
+      metricLabel: "de perte · prévisible",
+    },
   },
   {
-    feature: "Sécurité Juridique & Flexibilité",
-    classic: { text: "Risque de squatteur, bail rigide avec préavis longs.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
-    trusthome: { text: "Aucun risque de squatteur (notre bail souple protège le propriétaire et lui permet de mettre fin au contrat quand il le veut). Contrat flexible (1-3+ ans) avec clauses de sortie.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
+    label: "Sécurité juridique",
+    left: {
+      title: "Location classique",
+      body: "Risque de squatteur, bail rigide, préavis de 6 mois, procédures d'expulsion pouvant durer 2 ans.",
+      metric: "24",
+      metricLabel: "mois max · recours",
+    },
+    right: {
+      title: "Avec Trusthome",
+      body: "Aucun risque de squatteur. Contrat flexible 1–3+ ans avec clauses de sortie négociées en amont.",
+      metric: "0",
+      metricLabel: "risque de squat",
+    },
   },
   {
-    feature: "Entretien & Valorisation du Bien",
-    classic: { text: "Souvent à la charge du propriétaire (temps et argent). Bien fréquemment rendu en mauvais état avec usure marquée.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
-    trusthome: { text: "En tant que locataire, TrustHome assure : nettoyage pro régulier, embellissements (peinture, déco), petites réparations, et une maintenance proactive pour anticiper l'usure. Votre bien est maintenu en excellent état et valorisé.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
+    label: "Entretien du bien",
+    left: {
+      title: "Location classique",
+      body: "Bien rendu avec usure marquée. Remise en peinture 1 500–3 000€, nettoyage en fin de bail, réparations à votre charge.",
+      metric: "3 000 €",
+      metricLabel: "/ rotation",
+    },
+    right: {
+      title: "Avec Trusthome",
+      body: "Nettoyages professionnels plusieurs fois par semaine, embellissements réguliers, maintenance proactive.",
+      metric: "0 €",
+      metricLabel: "à votre charge",
+    },
   },
   {
-    feature: "Tranquillité d'Esprit & Zéro Charge Mentale",
-    classic: { text: "Soucis des imprévus, relations locataires complexes, charge administrative.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
-    trusthome: { text: "Aucune implication quotidienne, un seul interlocuteur dédié : TrustHome, votre locataire. Sérénité maximale.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
+    label: "Charge mentale",
+    left: {
+      title: "Location classique",
+      body: "Sollicitations imprévues, relations locataires complexes, états des lieux, attestations d'assurance, régularisations de charges.",
+      metric: "~12h",
+      metricLabel: "/ mois en moyenne",
+    },
+    right: {
+      title: "Avec Trusthome",
+      body: "Un seul interlocuteur dédié, reporting trimestriel, et votre temps qui redevient vôtre.",
+      metric: "~0h",
+      metricLabel: "/ mois",
+    },
   },
   {
-    feature: "Levier pour Projets Futurs",
-    classic: { text: "Revenus locatifs parfois vus avec prudence par les banques.", icon: <XCircle className="h-5 w-5 text-destructive" /> },
-    trusthome: { text: "Revenus garantis par TrustHome et bail solide, reconnus et valorisés pour vos financements futurs.", icon: <CheckCircle2 className="h-5 w-5 text-success" /> },
+    label: "Levier bancaire",
+    left: {
+      title: "Location classique",
+      body: "Revenus locatifs souvent pondérés à 70% par les banques, preuves de stabilité demandées sur 2 ans.",
+      metric: "×0.7",
+      metricLabel: "revenus retenus",
+    },
+    right: {
+      title: "Avec Trusthome",
+      body: "Bail solide, revenus garantis. Les banques partenaires retiennent 95–100% des loyers dans votre capacité d'emprunt.",
+      metric: "×1.0",
+      metricLabel: "revenus retenus",
+    },
   },
 ];
 
 export function ComparisonSection() {
+  const [active, setActive] = useState(0);
+  const tab = tabs[active];
+
   return (
-    <section className="py-12 md:py-20 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <HelpCircle className="h-8 w-8 text-primary mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">
-            Pourquoi choisir TrustHome comme locataire ?
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Découvrez les avantages concrets de louer votre bien à TrustHome par rapport à une location classique.
-          </p>
+    <section
+      id="compare"
+      style={{
+        padding: "120px 0",
+        background: "var(--cream-100)",
+        borderTop: "1px solid var(--line)",
+      }}
+    >
+      <div style={{ maxWidth: 1360, margin: "0 auto", padding: "0 40px" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1.5fr",
+            gap: 72,
+            marginBottom: 28,
+          }}
+          className="th-sec-head"
+        >
+          <div className="eyebrow">— Comparer</div>
+          <div>
+            <h2>
+              Location classique, ou Trusthome comme locataire ?
+            </h2>
+            <p
+              style={{
+                color: "var(--ink-500)",
+                maxWidth: "58ch",
+                fontSize: 17,
+                lineHeight: 1.5,
+                marginTop: 12,
+              }}
+            >
+              Passez la souris sur chaque critère pour voir la différence
+              concrète, chiffres à l&apos;appui.
+            </p>
+          </div>
         </div>
-        <Card className="shadow-xl overflow-hidden">
-          <CardContent className="p-0">
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-border">
-                <thead className="bg-muted/50">
-                  <tr>
-                    <th scope="col" className="px-6 py-6 text-left text-sm font-semibold text-primary tracking-wider font-headline w-1/4">
-                      Avantage Clé
-                    </th>
-                    <th scope="col" className="px-6 py-6 text-left text-sm font-semibold text-primary tracking-wider font-headline w-3/8">
-                      Location Classique
-                    </th>
-                    <th scope="col" className="px-6 py-6 text-left text-sm font-semibold text-primary tracking-wider font-headline w-3/8">
-                      Avec TrustHome (Votre Locataire)
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-card divide-y divide-border">
-                  {comparisonData.map((item, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-card" : "bg-muted/30"}>
-                      <td className="px-6 py-6 text-sm font-semibold text-foreground align-top w-1/4">
-                        {item.feature}
-                      </td>
-                      <td className="px-6 py-6 text-sm text-foreground align-top w-3/8">
-                        <div className="flex items-start space-x-3">
-                          <div className="flex-shrink-0 mt-0.5">{item.classic.icon}</div>
-                          <span className="leading-relaxed">{item.classic.text}</span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-6 text-sm text-foreground align-top w-3/8">
-                        <div className="flex items-start space-x-3">
-                          <div className="flex-shrink-0 mt-0.5">{item.trusthome.icon}</div>
-                          <span className="leading-relaxed">{item.trusthome.text}</span>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+
+        {/* Tabs */}
+        <div
+          style={{
+            display: "flex",
+            gap: 6,
+            flexWrap: "wrap",
+            borderBottom: "1px solid var(--line)",
+            paddingBottom: 0,
+            marginTop: 28,
+          }}
+        >
+          {tabs.map((t, i) => (
+            <button
+              key={t.label}
+              onClick={() => setActive(i)}
+              style={{
+                padding: "12px 14px",
+                fontSize: 13,
+                color: active === i ? "var(--teal-900)" : "var(--ink-500)",
+                fontFamily: "var(--font-space-grotesk)",
+                fontWeight: 500,
+                borderBottom: active === i
+                  ? "2px solid var(--violet-600)"
+                  : "2px solid transparent",
+                marginBottom: -1,
+                whiteSpace: "nowrap",
+                background: "transparent",
+                border: "none",
+                borderBottomWidth: 2,
+                borderBottomStyle: "solid",
+                borderBottomColor: active === i ? "var(--violet-600)" : "transparent",
+                cursor: "pointer",
+                transition: "color .15s ease",
+              }}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Body */}
+        <div style={{ marginTop: 28 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              border: "1px solid var(--line)",
+              borderRadius: 12,
+              overflow: "hidden",
+            }}
+            className="th-comp-body"
+          >
+            {/* Classic */}
+            <div style={{ padding: 28, background: "var(--cream-100)" }}>
+              <h4
+                style={{
+                  fontSize: 14,
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.12em",
+                  fontWeight: 500,
+                  color: "var(--red-600)",
+                  margin: 0,
+                }}
+              >
+                {tab.left.title}
+              </h4>
+              <p
+                style={{
+                  marginTop: 14,
+                  fontSize: 15,
+                  lineHeight: 1.55,
+                  color: "var(--ink-700)",
+                }}
+              >
+                {tab.left.body}
+              </p>
+              <div
+                style={{
+                  marginTop: 20,
+                  fontFamily: "var(--font-space-grotesk)",
+                  fontSize: 34,
+                  fontWeight: 500,
+                  letterSpacing: "-0.02em",
+                  color: "var(--red-600)",
+                }}
+              >
+                {tab.left.metric}{" "}
+                <span
+                  style={{
+                    fontSize: 14,
+                    color: "var(--ink-500)",
+                    fontFamily: "var(--font-jetbrains-mono)",
+                  }}
+                >
+                  {tab.left.metricLabel}
+                </span>
+              </div>
             </div>
-          </CardContent>
-        </Card>
-        <p className="text-center mt-8 text-muted-foreground">
-          Et bien plus encore... Contactez-nous pour découvrir tous les avantages de louer votre bien à TrustHome !
-        </p>
+
+            {/* Trusthome */}
+            <div
+              style={{
+                padding: 28,
+                background: "var(--teal-900)",
+                color: "var(--cream-50)",
+              }}
+            >
+              <h4
+                style={{
+                  fontSize: 14,
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.12em",
+                  fontWeight: 500,
+                  color: "#8fdc9d",
+                  margin: 0,
+                }}
+              >
+                {tab.right.title}
+              </h4>
+              <p
+                style={{
+                  marginTop: 14,
+                  fontSize: 15,
+                  lineHeight: 1.55,
+                  color: "var(--cream-100)",
+                }}
+              >
+                {tab.right.body}
+              </p>
+              <div
+                style={{
+                  marginTop: 20,
+                  fontFamily: "var(--font-space-grotesk)",
+                  fontSize: 34,
+                  fontWeight: 500,
+                  letterSpacing: "-0.02em",
+                  color: "#8fdc9d",
+                }}
+              >
+                {tab.right.metric}{" "}
+                <span
+                  style={{
+                    fontSize: 14,
+                    color: "var(--teal-300)",
+                    fontFamily: "var(--font-jetbrains-mono)",
+                  }}
+                >
+                  {tab.right.metricLabel}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <style>{`
+        @media (max-width: 760px) {
+          .th-comp-body { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 900px) {
+          .th-sec-head { grid-template-columns: 1fr !important; gap: 20px !important; }
+        }
+      `}</style>
     </section>
   );
 }

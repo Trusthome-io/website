@@ -1,135 +1,207 @@
-import Link from 'next/link';
-import { Home, Mail, Phone, MapPin } from 'lucide-react';
+"use client";
 
 export function Footer() {
+  const cols = [
+    {
+      title: "Produit",
+      links: [
+        ["Comment ça marche", "#process"],
+        ["Estimer mon loyer", "#estimator"],
+        ["Comparer", "#compare"],
+        ["Outil de confiance", "#ai"],
+      ],
+    },
+    {
+      title: "Société",
+      links: [
+        ["À propos", "#"],
+        ["Presse", "#"],
+        ["Nous rejoindre", "#"],
+        ["Contact", "#contact"],
+      ],
+    },
+    {
+      title: "Légal",
+      links: [
+        ["Mentions légales", "#"],
+        ["Politique de confidentialité", "#"],
+        ["CGU", "#"],
+      ],
+    },
+  ];
+
   return (
-    <footer className="bg-card border-t">
-      <div className="container mx-auto px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* About Section */}
+    <footer
+      style={{
+        background: "var(--teal-900)",
+        color: "var(--cream-100)",
+        padding: "80px 0 40px",
+      }}
+    >
+      <div style={{ maxWidth: 1360, margin: "0 auto", padding: "0 40px" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.4fr 1fr 1fr 1fr",
+            gap: 40,
+          }}
+          className="th-foot-grid"
+        >
+          {/* Brand col */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Home className="h-6 w-6 text-primary" />
-              <h3 className="text-lg font-headline font-bold text-primary">TrustHome</h3>
-            </div>
-            <p className="text-sm text-muted-foreground mb-4">
-              La solution de gestion locative professionnelle qui garantit vos loyers et simplifie votre vie de propriétaire.
+            <a
+              href="#"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                fontFamily: "var(--font-space-grotesk)",
+                fontWeight: 600,
+                letterSpacing: "-0.02em",
+                fontSize: 18,
+                color: "white",
+                textDecoration: "none",
+              }}
+            >
+              <span
+                style={{
+                  width: 26,
+                  height: 26,
+                  borderRadius: 7,
+                  background:
+                    "linear-gradient(135deg, var(--teal-600) 0%, var(--teal-600) 50%, var(--violet-600) 50%, var(--violet-600) 100%)",
+                  position: "relative",
+                  overflow: "hidden",
+                  flexShrink: 0,
+                  display: "inline-block",
+                }}
+              >
+                <span
+                  style={{
+                    position: "absolute",
+                    inset: 6,
+                    borderRadius: 3,
+                    background: "var(--cream-50)",
+                    display: "block",
+                  }}
+                />
+              </span>
+              <span>Trusthome</span>
+            </a>
+            <p
+              style={{
+                marginTop: 18,
+                fontSize: 14,
+                maxWidth: "36ch",
+                color: "var(--teal-300)",
+                lineHeight: 1.55,
+              }}
+            >
+              Le locataire qui vous verse un loyer garanti, entretient votre
+              bien, et vous laisse dormir.
             </p>
-            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>Clichy, Hauts-de-Seine</span>
-              </div>
+            <p
+              style={{
+                marginTop: 16,
+                fontSize: 12,
+                color: "var(--teal-500)",
+                fontFamily: "var(--font-jetbrains-mono)",
+              }}
+            >
+              Paris · Île-de-France
+            </p>
+            <p
+              style={{
+                marginTop: 4,
+                fontSize: 12,
+                color: "var(--teal-500)",
+                fontFamily: "var(--font-jetbrains-mono)",
+              }}
+            >
+              contact@trusthome.io
+            </p>
+          </div>
+
+          {cols.map((col) => (
+            <div key={col.title}>
+              <h5
+                style={{
+                  fontFamily: "var(--font-jetbrains-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "var(--teal-300)",
+                  fontWeight: 500,
+                  marginBottom: 16,
+                }}
+              >
+                {col.title}
+              </h5>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                  fontSize: 14,
+                }}
+              >
+                {col.links.map(([label, href]) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      style={{
+                        color: "var(--cream-100)",
+                        textDecoration: "none",
+                        transition: "color .15s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        ((e.target as HTMLElement).style.color = "white")
+                      }
+                      onMouseLeave={(e) =>
+                        ((e.target as HTMLElement).style.color =
+                          "var(--cream-100)")
+                      }
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Liens rapides</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="#hero" className="text-muted-foreground hover:text-primary transition-colors">
-                  Accueil
-                </Link>
-              </li>
-              <li>
-                <Link href="#storytelling" className="text-muted-foreground hover:text-primary transition-colors">
-                  Notre Histoire
-                </Link>
-              </li>
-              <li>
-                <Link href="#process" className="text-muted-foreground hover:text-primary transition-colors">
-                  Comment ça marche
-                </Link>
-              </li>
-              <li>
-                <Link href="#comparison" className="text-muted-foreground hover:text-primary transition-colors">
-                  Avantages
-                </Link>
-              </li>
-              <li>
-                <Link href="#faq" className="text-muted-foreground hover:text-primary transition-colors">
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Informations légales</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Mentions légales
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Conditions générales
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Politique de confidentialité
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Cookies
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Protection des données (RGPD)
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Contact</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <Phone className="h-4 w-4 text-primary mt-0.5" />
-                <div>
-                  <a href="tel:0781685556" className="text-muted-foreground hover:text-primary transition-colors">
-                    07 81 68 55 56
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail className="h-4 w-4 text-primary mt-0.5" />
-                <div>
-                  <a href="mailto:ajithanmoorthy@outlook.fr" className="text-muted-foreground hover:text-primary transition-colors break-all">
-                    ajithanmoorthy@outlook.fr
-                  </a>
-                </div>
-              </li>
-              <li>
-                <Link href="#contact" className="text-primary hover:text-primary/80 transition-colors font-medium">
-                  Formulaire de contact →
-                </Link>
-              </li>
-            </ul>
-          </div>
+          ))}
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              &copy; {new Date().getFullYear()} TrustHome. Tous droits réservés.
-            </p>
-            <div className="flex gap-4 text-sm text-muted-foreground">
-              <span>🇫🇷 Service basé en France</span>
-              <span className="hidden md:inline">•</span>
-              <span>Conforme RGPD</span>
-            </div>
-          </div>
+        <div
+          style={{
+            marginTop: 60,
+            paddingTop: 24,
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            fontSize: 12,
+            color: "var(--teal-300)",
+            fontFamily: "var(--font-jetbrains-mono)",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+          }}
+        >
+          <span>© 2026 Trusthome SAS · Clichy</span>
+          <span>Fait avec soin en Île-de-France</span>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 800px) {
+          .th-foot-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .th-foot-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   );
 }

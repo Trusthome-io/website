@@ -12,9 +12,40 @@ export default {
       fontFamily: {
         body: ['var(--font-pt-sans)', 'sans-serif'],
         headline: ['var(--font-space-grotesk)', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'monospace'],
         code: ['monospace'],
       },
       colors: {
+        teal: {
+          50: '#e0f4f1',
+          100: '#d9ebee',
+          300: '#a8cdd5',
+          500: '#68a3b3',
+          600: '#468499',
+          700: '#2f6a77',
+          900: '#1a3a43',
+        },
+        violet: {
+          100: '#ece3f1',
+          300: '#c4b1d1',
+          600: '#846599',
+          700: '#5a4269',
+        },
+        cream: {
+          50: '#faf7f2',
+          100: '#f3ede3',
+          200: '#e8dfd0',
+        },
+        ink: {
+          300: '#98a2a9',
+          500: '#5d6a72',
+          700: '#2a3840',
+          900: '#10181c',
+        },
+        line: '#d9dadc',
+        green: {
+          600: '#2d7d5a',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -76,6 +107,15 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        pulse: {
+          '50%': { boxShadow: '0 0 0 10px rgba(143,220,157,0)' },
+        },
+        orbspin: {
+          to: { transform: 'rotate(360deg)' },
+        },
+        bubIn: {
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
         'accordion-down': {
           from: {
             height: '0',

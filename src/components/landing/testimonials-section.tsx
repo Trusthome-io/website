@@ -1,104 +1,251 @@
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Star } from "lucide-react";
+import { useState, useRef } from "react";
 
 const testimonials = [
   {
+    quote:
+      "Ça fait 14 mois que je reçois mon loyer le 5, sans exception. Je ne me souviens même plus de la dernière fois que j'ai pensé à mon appartement de Levallois.",
     name: "Sophie L.",
-    title: "Propriétaire d'un T2 à Levallois-Perret (92)",
-    quote: "Mon T2 lumineux avec son charmant balcon à Levallois-Perret est entre de bonnes mains avec TrustHome. Je n'ai plus à me soucier des retards de paiement ou de la recherche de locataires. Les loyers sont versés à date fixe et mon appartement est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
-    avatar: "SL",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie&backgroundColor=b6e3f4",
-    imageHint: "woman apartment"
+    title: "Propriétaire T2, Levallois-Perret",
+    featured: true,
   },
   {
+    quote:
+      "J'ai trois biens confiés à Trusthome. Le premier contrat a tellement bien fonctionné que j'ai signé les deux suivants dans la foulée. Zéro vacance en 22 mois.",
     name: "Marc D.",
-    title: "Investisseur à Clichy & Paris 17ème (92/75)",
-    quote: "En tant qu'investisseur avec plusieurs appartements – notamment un grand studio à Clichy et un deux-pièces à Paris 17ème – TrustHome a simplifié ma vie. Leur modèle d'exploitation est performant, les revenus sont garantis et mes biens sont valorisés. Un partenaire professionnel et fiable que je conseille fortement.",
-    avatar: "MD",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marc&backgroundColor=c0aede",
-    imageHint: "man investor"
+    title: "Investisseur, Paris 17e",
+    featured: false,
   },
   {
+    quote:
+      "J'étais sceptique au début — trop beau pour être vrai. Mais après un an, je dois admettre que c'est exactement ce qu'ils ont promis. Loyer le 5, pas de stress.",
     name: "Isabelle B.",
-    title: "Propriétaire d'un studio à Asnières-sur-Seine (92)",
-    quote: "J'étais un peu sceptique au début, mais TrustHome a transformé la location de mon studio meublé avec goût à Asnières. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées, 5 étoiles méritées pour la gestion de mon bien de A à Z !",
-    avatar: "IB",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabelle&backgroundColor=ffd5dc",
-    imageHint: "woman city"
+    title: "Propriétaire T3, Asnières",
+    featured: false,
   },
   {
+    quote:
+      "Expatrié à Singapour, je ne pouvais pas gérer mon bien moi-même. Trusthome s'occupe de tout et je reçois le virement chaque mois. La tranquillité d'esprit, c'est n'a pas de prix.",
     name: "David P.",
-    title: "Propriétaire d'une maison à Saint-Ouen (93)",
-    quote: "J'avais des appréhensions à louer ma maison avec petit jardin à Saint-Ouen pendant mon expatriation. TrustHome m'a offert une solution clé en main : loyer versé rubis sur l'ongle, et ma maison est entretenue comme si j'y étais. Une sérénité inestimable, surtout pour un bien de cette taille !",
-    avatar: "DP",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=d1d4f9",
-    imageHint: "man house"
+    title: "Propriétaire T2, Paris 8e",
+    featured: false,
   },
   {
+    quote:
+      "À la retraite, je voulais la paix. Plus de locataires qui appellent pour une ampoule, plus de courses chez le bricoleur. Trusthome a changé ma vie de propriétaire.",
     name: "Nathalie M.",
-    title: "Propriétaire d'un T3 à Neuilly-sur-Seine (92)",
-    quote: "Grâce à TrustHome, mon T3 à Neuilly génère des revenus stables chaque mois sans aucun souci de gestion. L'équipe est réactive et professionnelle. Je peux enfin profiter de ma retraite sans m'occuper de la location. Un service remarquable que je conseille à tous les propriétaires !",
-    avatar: "NM",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nathalie&backgroundColor=ffdfbf",
-    imageHint: "woman senior"
+    title: "Propriétaire T4, Neuilly-sur-Seine",
+    featured: false,
   },
   {
+    quote:
+      "6 mois d'expérience dans le 8ème et je suis conquis. Le bien est impeccable, les comptes rendus trimestriels sont clairs, et le loyer est toujours là à temps.",
     name: "Thomas R.",
-    title: "Propriétaire d'un appartement à Paris 8ème (75)",
-    quote: "TrustHome gère mon appartement dans le 8ème arrondissement depuis 6 mois et c'est un sans-faute. Loyer garanti, bien entretenu, reporting régulier. Je regrette de ne pas les avoir connus plus tôt ! Pour les propriétaires qui veulent dormir sur leurs deux oreilles, c'est la solution idéale.",
-    avatar: "TR",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas&backgroundColor=c7ecee",
-    imageHint: "man professional"
-  }
+    title: "Propriétaire T2, Paris 8e",
+    featured: false,
+  },
 ];
 
 export function TestimonialsSection() {
+  const [offset, setOffset] = useState(0);
+  const cardWidth = 460;
+  const gap = 20;
+  const max = testimonials.length - 1;
+
+  function prev() {
+    setOffset((o) => Math.max(0, o - 1));
+  }
+  function next() {
+    setOffset((o) => Math.min(max, o + 1));
+  }
+
   return (
-    <section className="py-12 md:py-20 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">
-            Ce que nos clients disent de nous
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            La satisfaction de nos propriétaires est notre meilleure publicité. Découvrez leurs expériences avec TrustHome.
-          </p>
+    <section
+      id="testimonials"
+      style={{
+        padding: "120px 0",
+        borderTop: "1px solid var(--line)",
+        background: "var(--cream-50)",
+      }}
+    >
+      <div style={{ maxWidth: 1360, margin: "0 auto", padding: "0 40px" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1.5fr",
+            gap: 72,
+            marginBottom: 40,
+          }}
+          className="th-sec-head"
+        >
+          <div className="eyebrow">— Ils nous font confiance</div>
+          <div>
+            <h2>Des propriétaires qui dorment mieux.</h2>
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.imageHint} />
-                    <AvatarFallback>{testimonial.avatar}</AvatarFallback>
-                  </Avatar>
+
+        {/* Stage */}
+        <div
+          style={{
+            overflow: "hidden",
+            margin: "0 -40px",
+            padding: "40px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: gap,
+              transform: `translateX(-${offset * (cardWidth + gap)}px)`,
+              transition: "transform .5s cubic-bezier(.22,.61,.36,1)",
+              willChange: "transform",
+            }}
+          >
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                style={{
+                  flex: `0 0 min(${cardWidth}px, 85vw)`,
+                  padding: 32,
+                  border: `1px solid ${t.featured ? "transparent" : "var(--line)"}`,
+                  borderRadius: 20,
+                  background: t.featured ? "var(--teal-900)" : "var(--cream-50)",
+                  display: "flex",
+                  flexDirection: "column",
+                  minHeight: 320,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-space-grotesk)",
+                    fontWeight: 400,
+                    fontSize: 22,
+                    lineHeight: 1.32,
+                    color: t.featured ? "white" : "var(--teal-900)",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: 40,
+                      color: t.featured ? "var(--violet-300)" : "var(--violet-600)",
+                      lineHeight: 0.8,
+                      marginBottom: -18,
+                      fontFamily: "var(--font-space-grotesk)",
+                    }}
+                  >
+                    &ldquo;
+                  </span>
+                  {t.quote}
+                </div>
+                <div
+                  style={{
+                    marginTop: "auto",
+                    paddingTop: 22,
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-end",
+                  }}
+                >
                   <div>
-                    <CardTitle className="font-headline text-xl">{testimonial.name}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                    <div
+                      style={{
+                        fontFamily: "var(--font-space-grotesk)",
+                        fontWeight: 600,
+                        color: t.featured ? "white" : "var(--teal-900)",
+                        fontSize: 15,
+                      }}
+                    >
+                      {t.name}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: 13,
+                        color: t.featured ? "var(--teal-300)" : "var(--ink-500)",
+                        marginTop: 2,
+                      }}
+                    >
+                      {t.title}
+                    </div>
+                  </div>
+                  <div style={{ color: "#c79b3a", fontSize: 13, letterSpacing: 2 }}>
+                    ★★★★★
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <div className="flex mb-2">
-                  {Array(5).fill(0).map((_, i) => (
-                    <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/50'}`} />
-                  ))}
-                </div>
-                <p className="text-foreground italic">&ldquo;{testimonial.quote}&rdquo;</p>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Nav */}
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            marginTop: 32,
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ display: "flex", gap: 6 }}>
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setOffset(i)}
+                style={{
+                  width: offset === i ? 40 : 22,
+                  height: 3,
+                  borderRadius: 999,
+                  background: offset === i ? "var(--violet-600)" : "var(--line)",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "background .2s ease, width .2s ease",
+                  padding: 0,
+                }}
+              />
+            ))}
+          </div>
+          <div style={{ display: "flex", gap: 8 }}>
+            {[["←", prev], ["→", next]].map(([label, handler]) => (
+              <button
+                key={label as string}
+                onClick={handler as () => void}
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  border: "1px solid var(--line)",
+                  color: "var(--teal-900)",
+                  background: "var(--cream-50)",
+                  cursor: "pointer",
+                  transition: "all .15s ease",
+                  fontSize: 16,
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "var(--teal-900)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--cream-50)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--teal-900)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "var(--cream-50)";
+                  (e.currentTarget as HTMLElement).style.color = "var(--teal-900)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "var(--line)";
+                }}
+              >
+                {label as string}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .th-sec-head { grid-template-columns: 1fr !important; gap: 20px !important; }
+        }
+      `}</style>
     </section>
   );
 }

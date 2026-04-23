@@ -1,72 +1,182 @@
-import Link from 'next/link';
-import { Home, Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { ThemeToggle } from '@/components/theme-toggle';
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 
 export function Header() {
-  const navItems = [
-    { href: '#hero', label: 'Accueil' },
-    { href: '#storytelling', label: 'Notre Histoire' },
-    { href: '#process', label: 'Comment ça marche' },
-    { href: '#comparison', label: 'Avantages' },
-    { href: '#faq', label: 'FAQ' },
-    { href: '#contact', label: 'Contact' }
-  ];
+  const [lang, setLang] = useState<"FR" | "EN">("FR");
 
   return (
-    <header className="py-4 px-4 md:px-6 bg-background shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <Home className="h-8 w-8 text-primary" />
-          <h1 className="text-2xl md:text-3xl font-headline font-bold text-primary">TrustHome</h1>
+    <nav
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
+        background: "rgba(250, 247, 242, 0.82)",
+        backdropFilter: "saturate(1.2) blur(12px)",
+        WebkitBackdropFilter: "saturate(1.2) blur(12px)",
+        borderBottom: "1px solid var(--line)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1360,
+          margin: "0 auto",
+          padding: "0 40px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: 64,
+        }}
+      >
+        <Link
+          href="#"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            fontFamily: "var(--font-space-grotesk)",
+            fontWeight: 600,
+            letterSpacing: "-0.02em",
+            fontSize: 18,
+            color: "var(--teal-900)",
+            textDecoration: "none",
+          }}
+        >
+          <span
+            style={{
+              width: 26,
+              height: 26,
+              borderRadius: 7,
+              background:
+                "linear-gradient(135deg, var(--teal-600) 0%, var(--teal-600) 50%, var(--violet-600) 50%, var(--violet-600) 100%)",
+              position: "relative",
+              overflow: "hidden",
+              flexShrink: 0,
+              display: "inline-block",
+            }}
+          >
+            <span
+              style={{
+                position: "absolute",
+                inset: 6,
+                borderRadius: 3,
+                background: "var(--cream-50)",
+                display: "block",
+              }}
+            />
+          </span>
+          <span>Trusthome</span>
         </Link>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {navItems.map((item) => (
-            <Link 
-              key={item.href}
-              href={item.href} 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <ThemeToggle />
-          <Button asChild className="bg-accent hover:bg-accent/90">
-            <Link href="#contact">Démarrer</Link>
-          </Button>
-        </nav>
 
-        {/* Mobile Navigation */}
-        <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <nav className="flex flex-col space-y-4 mt-8">
-              {navItems.map((item) => (
-                <Link 
-                  key={item.href}
-                  href={item.href} 
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2 border-b border-border"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Button asChild className="bg-accent hover:bg-accent/90 mt-4">
-                <Link href="#contact">Démarrer</Link>
-              </Button>
-            </nav>
-          </SheetContent>
-          </Sheet>
+        <div
+          className="th-nav-links"
+          style={{
+            display: "flex",
+            gap: 28,
+            alignItems: "center",
+            fontSize: 14,
+            color: "var(--ink-700)",
+          }}
+        >
+          {(
+            [
+              ["Pourquoi", "#story"],
+              ["Comment", "#process"],
+              ["Loyer estimé", "#estimator"],
+              ["Comparer", "#compare"],
+              ["FAQ", "#faq"],
+            ] as const
+          ).map(([label, href]) => (
+            <a
+              key={href}
+              href={href}
+              style={{ transition: "color .15s ease", color: "var(--ink-700)" }}
+              onMouseEnter={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--teal-600)")
+              }
+              onMouseLeave={(e) =>
+                ((e.target as HTMLElement).style.color = "var(--ink-700)")
+              }
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+
+        <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              background: "var(--cream-200)",
+              borderRadius: 999,
+              padding: 3,
+              fontFamily: "var(--font-jetbrains-mono)",
+              fontSize: 11,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+            }}
+          >
+            {(["FR", "EN"] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                style={{
+                  padding: "5px 10px",
+                  borderRadius: 999,
+                  background: lang === l ? "var(--teal-900)" : "transparent",
+                  color: lang === l ? "var(--cream-50)" : "var(--ink-700)",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all .15s ease",
+                }}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+
+          <a
+            href="#contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              padding: "9px 14px",
+              fontFamily: "var(--font-space-grotesk)",
+              fontWeight: 500,
+              fontSize: 13,
+              borderRadius: 999,
+              background: "var(--teal-900)",
+              color: "var(--cream-50)",
+              whiteSpace: "nowrap",
+              transition: "transform .15s ease, background .15s ease",
+              textDecoration: "none",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background =
+                "var(--ink-900)";
+              (e.currentTarget as HTMLElement).style.transform =
+                "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background =
+                "var(--teal-900)";
+              (e.currentTarget as HTMLElement).style.transform = "none";
+            }}
+          >
+            Nous contacter
+          </a>
         </div>
       </div>
-    </header>
+
+      <style>{`
+        @media (max-width: 880px) {
+          .th-nav-links { display: none !important; }
+        }
+        @media (max-width: 480px) {
+          .th-header-wrap { padding: 0 20px !important; }
+        }
+      `}</style>
+    </nav>
   );
 }
