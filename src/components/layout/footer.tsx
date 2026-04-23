@@ -18,7 +18,7 @@ export function Footer() {
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Paris, Île-de-France</span>
+                <span>Clichy, Hauts-de-Seine</span>
               </div>
             </div>
           </div>
