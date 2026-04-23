@@ -10,6 +10,7 @@ import { AiConfidenceSection } from "@/components/landing/ai-confidence-section"
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { TrustLogosSection } from "@/components/landing/trust-logos-section";
 import { ContactSection } from "@/components/landing/contact-section";
+import { QuickContactSection } from "@/components/landing/quick-contact-section";
 import { FaqSection } from "@/components/landing/faq-section";
 
 export default function HomePage() {
@@ -27,6 +28,7 @@ export default function HomePage() {
         <TestimonialsSection />
         <TrustLogosSection />
         <ContactSection />
+        <QuickContactSection />
         <FaqSection />
       </main>
       <Footer />
