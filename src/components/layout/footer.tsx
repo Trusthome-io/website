@@ -108,7 +108,7 @@ export function Footer() {
                 fontFamily: "var(--font-jetbrains-mono)",
               }}
             >
-              Paris · Île-de-France
+              Clichy · Hauts-de-Seine
             </p>
             <p
               style={{
@@ -118,7 +118,7 @@ export function Footer() {
                 fontFamily: "var(--font-jetbrains-mono)",
               }}
             >
-              contact@trusthome.io
+              ajithanmoorthy@outlook.fr
             </p>
           </div>
 
