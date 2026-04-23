@@ -10,8 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "export": "next build",
-    "deploy:ionos": "npm run export && echo 'Build terminé. Fichiers prêts dans le dossier out/'"
+    "export": "next build"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.8.0",
