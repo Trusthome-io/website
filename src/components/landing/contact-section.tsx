@@ -35,9 +35,8 @@ export function ContactSection() {
             <Star className='h-4 w-4 fill-primary' />
             Contactez-nous directement
           </div>
-          <h2 className='mb-4 text-center font-headline text-2xl font-bold text-foreground sm:text-3xl md:text-4xl lg:text-5xl'>
-            Nous sommes là pour vous
-            <span className='bg-gradient-warm bg-clip-text text-transparent'> accompagner</span>
+          <h2 className='mb-4 w-full text-center font-headline text-2xl font-bold text-foreground sm:text-3xl md:text-4xl lg:text-5xl'>
+            Nous sommes là pour vous<span className='bg-gradient-warm bg-clip-text text-transparent'> accompagner</span>
           </h2>
           <p className='mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl'>
             Une question ? Besoin d&apos;informations ? Contactez-nous par téléphone, WhatsApp ou email.
