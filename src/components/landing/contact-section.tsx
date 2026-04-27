@@ -35,7 +35,7 @@ export function ContactSection() {
             <Star className='h-4 w-4 fill-primary' />
             Contactez-nous directement
           </div>
-          <h2 className='mb-4 font-headline text-2xl font-bold text-foreground sm:text-3xl md:text-4xl lg:text-5xl'>
+          <h2 className='mb-4 text-center font-headline text-2xl font-bold text-foreground sm:text-3xl md:text-4xl lg:text-5xl'>
             Nous sommes là pour vous
             <span className='bg-gradient-warm bg-clip-text text-transparent'> accompagner</span>
           </h2>
