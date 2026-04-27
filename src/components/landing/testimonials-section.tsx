@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "David P.",
     title: "Propriétaire d'une maison individuelle à Saint-Germain-en-Laye (78)",
-    quote: "J'avais des appréhensions à louer ma maison à Saint-Germain-en-Laye pendant mon expatriation. TrustHome m'a offert une solution clé en main : loyer versé rubis sur l'ongle, et ma maison est entretenue comme si j'y étais. Une sérénité inestimable pour un bien de cette taille !",
+    quote: "Au départ, j'avais quelques inquiétudes à l'idée de louer ma maison à Saint-Germain-en-Laye pendant mon expatriation. Finalement, avec TrustHome, tout s'est fait simplement : le loyer est versé régulièrement, sans souci, et la maison est bien entretenue. C'est rassurant de savoir que tout est géré sérieusement en mon absence.",
     avatar: "DP",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=d1d4f9",
@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: "Nathalie M.",
     title: "Propriétaire d'un T3 à Versailles (78)",
-    quote: "Grâce à TrustHome, mon T3 à Versailles génère des revenus stables chaque mois sans aucun souci de gestion. L'équipe est réactive et professionnelle. Je peux enfin profiter de ma retraite sans m'occuper de la location. Un service remarquable que je conseille à tous les propriétaires !",
+    quote: "Grâce à TrustHome, mon T3 à Versailles me garantit un loyer régulier chaque mois, sans que j'aie à gérer quoi que ce soit. L'équipe est sérieuse et réactive, ce qui est vraiment appréciable. Je peux profiter de ma retraite tranquillement.",
     avatar: "NM",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nathalie&backgroundColor=ffdfbf",
@@ -33,26 +33,17 @@ const testimonials = [
   },
   {
     name: "Isabelle B.",
-    title: "Propriétaire d'un T2 à Clichy (92)",
-    quote: "J'étais un peu sceptique au début, mais TrustHome a complètement transformé la gestion de mon T2 à Clichy. Zéro vacance locative, un entretien nickel et un service client au top. Mes attentes ont été largement dépassées — 5 étoiles méritées de A à Z !",
+    title: "Propriétaire d'un T2 à Asnières-sur-Seine (92)",
+    quote: "J'étais un peu sceptique au début, mais TrustHome a complètement transformé la gestion de mon T2 à Asnières. Zéro vacance locative, un entretien nickel.",
     avatar: "IB",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabelle&backgroundColor=ffd5dc",
     imageHint: "woman city"
   },
   {
-    name: "Bernard T.",
-    title: "Propriétaire d'une maison individuelle à Asnières-sur-Seine (92)",
-    quote: "TrustHome gère ma maison individuelle à Asnières depuis plusieurs mois et je n'ai aucun regret. Loyer versé sans retard et maison parfaitement entretenue. C'est un vrai soulagement de déléguer à une équipe aussi sérieuse et disponible. Je recommande sans hésiter.",
-    avatar: "BT",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bernard&backgroundColor=d1f0e0",
-    imageHint: "man house"
-  },
-  {
     name: "Thomas R.",
     title: "Propriétaire d'une maison individuelle à Deauville (14)",
-    quote: "TrustHome gère ma maison à Deauville depuis plusieurs mois et c'est un sans-faute. Loyer garanti, bien entretenu, reporting régulier. Je regrette de ne pas les avoir connus plus tôt ! Pour les propriétaires qui veulent dormir sur leurs deux oreilles, c'est la solution idéale.",
+    quote: "TrustHome gère mon appartement depuis plusieurs mois et tout se passe bien. Le loyer est versé régulièrement, le bien est entretenu et j'ai des nouvelles de temps en temps sur la gestion. C'est rassurant au quotidien, et je regrette de ne pas les avoir connus plus tôt.",
     avatar: "TR",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas&backgroundColor=c7ecee",
