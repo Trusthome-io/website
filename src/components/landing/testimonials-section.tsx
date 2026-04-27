@@ -7,20 +7,11 @@ const testimonials = [
   {
     name: "Maxime DL.",
     title: "Propriétaire d'un T3 à Clichy (92)",
-    quote: "TrustHome gère mon T3 à Clichy depuis plusieurs mois et le résultat est sans appel : loyer versé à date fixe, locataires sérieux sélectionnés rapidement, et zéro tracas administratif. L'équipe est disponible, réactive et vraiment professionnelle. Je recommande à tous les propriétaires de la région.",
+    quote: "TrustHome gère mon T3 à Clichy depuis plusieurs mois et le résultat est sans appel : loyer versé à date fixe, zéro tracas administratif. L'équipe est disponible, réactive et vraiment professionnelle. Je recommande à tous les propriétaires de la région.",
     avatar: "ML",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maxime&backgroundColor=c0aede",
     imageHint: "man professional"
-  },
-  {
-    name: "Sophie L.",
-    title: "Propriétaire d'un T2 à Asnières-sur-Seine (92)",
-    quote: "Mon T2 à Asnières est entre de bonnes mains avec TrustHome. Je n'ai plus à me soucier des retards de paiement ou de la recherche de locataires. Les loyers sont versés à date fixe et mon appartement est toujours impeccable. Une vraie tranquillité d'esprit, je recommande vivement !",
-    avatar: "SL",
-    rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie&backgroundColor=b6e3f4",
-    imageHint: "woman apartment"
   },
   {
     name: "David P.",
@@ -52,7 +43,7 @@ const testimonials = [
   {
     name: "Bernard T.",
     title: "Propriétaire d'une maison individuelle à Asnières-sur-Seine (92)",
-    quote: "TrustHome gère ma maison individuelle à Asnières depuis plusieurs mois et je n'ai aucun regret. Locataires trouvés rapidement, loyer versé sans retard et maison parfaitement entretenue. C'est un vrai soulagement de déléguer à une équipe aussi sérieuse et disponible. Je recommande sans hésiter.",
+    quote: "TrustHome gère ma maison individuelle à Asnières depuis plusieurs mois et je n'ai aucun regret. Loyer versé sans retard et maison parfaitement entretenue. C'est un vrai soulagement de déléguer à une équipe aussi sérieuse et disponible. Je recommande sans hésiter.",
     avatar: "BT",
     rating: 5,
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bernard&backgroundColor=d1f0e0",
