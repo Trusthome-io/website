@@ -10,7 +10,7 @@ const testimonials = [
     quote: "TrustHome gère mon T3 à Clichy depuis plusieurs mois et le résultat est sans appel : loyer versé à date fixe, zéro tracas administratif. L'équipe est disponible, réactive et vraiment professionnelle. Je recommande à tous les propriétaires de la région.",
     avatar: "ML",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maxime&backgroundColor=c0aede",
+    image: "https://api.dicebear.com/9.x/personas/svg?seed=Maxime&backgroundColor=c0aede&hair=shortCombover&eyes=eyesNatural&mouth=smile",
     imageHint: "man professional"
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     quote: "Au départ, j'avais quelques inquiétudes à l'idée de louer ma maison à Saint-Germain-en-Laye pendant mon expatriation. Finalement, avec TrustHome, tout s'est fait simplement : le loyer est versé régulièrement, sans souci, et la maison est bien entretenue. C'est rassurant de savoir que tout est géré sérieusement en mon absence.",
     avatar: "DP",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=d1d4f9",
+    image: "https://api.dicebear.com/9.x/personas/svg?seed=DavidP&backgroundColor=d1d4f9&hair=shortComboverChops&eyes=eyesRound&mouth=smile",
     imageHint: "man house"
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
     quote: "Grâce à TrustHome, mon T3 à Versailles me garantit un loyer régulier chaque mois, sans que j'aie à gérer quoi que ce soit. L'équipe est sérieuse et réactive, ce qui est vraiment appréciable. Je peux profiter de ma retraite tranquillement.",
     avatar: "NM",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nathalie&backgroundColor=ffdfbf",
+    image: "https://api.dicebear.com/9.x/personas/svg?seed=Nathalie&backgroundColor=ffdfbf&hair=wavyBob&eyes=eyesNatural&mouth=smile",
     imageHint: "woman senior"
   },
   {
@@ -37,7 +37,7 @@ const testimonials = [
     quote: "J'étais un peu sceptique au début, mais TrustHome a complètement transformé la gestion de mon T2 à Asnières. Zéro vacance locative, un entretien nickel.",
     avatar: "IB",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabelle&backgroundColor=ffd5dc",
+    image: "https://api.dicebear.com/9.x/personas/svg?seed=Isabelle&backgroundColor=ffd5dc&hair=straightBun&eyes=eyesNatural&mouth=smile",
     imageHint: "woman city"
   },
   {
@@ -46,7 +46,7 @@ const testimonials = [
     quote: "TrustHome gère mon appartement depuis plusieurs mois et tout se passe bien. Le loyer est versé régulièrement, le bien est entretenu et j'ai des nouvelles de temps en temps sur la gestion. C'est rassurant au quotidien, et je regrette de ne pas les avoir connus plus tôt.",
     avatar: "TR",
     rating: 5,
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Thomas&backgroundColor=c7ecee",
+    image: "https://api.dicebear.com/9.x/personas/svg?seed=ThomasR&backgroundColor=c7ecee&hair=shortAndClean&eyes=eyesNatural&mouth=smile",
     imageHint: "man professional"
   }
 ];
