@@ -50,6 +50,15 @@ const testimonials = [
     imageHint: "woman city"
   },
   {
+    name: "Bernard T.",
+    title: "Propriétaire d'une maison individuelle à Asnières-sur-Seine (92)",
+    quote: "TrustHome gère ma maison individuelle à Asnières depuis plusieurs mois et je n'ai aucun regret. Locataires trouvés rapidement, loyer versé sans retard et maison parfaitement entretenue. C'est un vrai soulagement de déléguer à une équipe aussi sérieuse et disponible. Je recommande sans hésiter.",
+    avatar: "BT",
+    rating: 5,
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bernard&backgroundColor=d1f0e0",
+    imageHint: "man house"
+  },
+  {
     name: "Thomas R.",
     title: "Propriétaire d'une maison individuelle à Deauville (14)",
     quote: "TrustHome gère ma maison à Deauville depuis plusieurs mois et c'est un sans-faute. Loyer garanti, bien entretenu, reporting régulier. Je regrette de ne pas les avoir connus plus tôt ! Pour les propriétaires qui veulent dormir sur leurs deux oreilles, c'est la solution idéale.",
