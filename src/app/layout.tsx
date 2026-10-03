@@ -1,51 +1,34 @@
+import type { Metadata, Viewport } from "next";
+import { Geist } from "next/font/google";
+import "./globals.css";
 
-import type { Metadata } from 'next';
-import './globals.css';
-import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/theme-provider";
-import { PT_Sans, Space_Grotesk } from 'next/font/google';
-
-const ptSans = PT_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-pt-sans',
-  display: 'swap',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-});
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
 
 export const metadata: Metadata = {
-  title: 'TrustHome : Loyer Garanti, Zéro Souci.',
-  description: 'Louez votre bien à TrustHome et bénéficiez d\'un revenu garanti et d\'une tranquillité totale.',
+  metadataBase: new URL("https://trusthome.io"),
+  title: "TrustHome — Loyer garanti, zéro souci",
+  description:
+    "Louez votre bien à TrustHome : loyer garanti chaque mois, entretien inclus, aucun frais d'agence.",
+  openGraph: {
+    title: "TrustHome — Loyer garanti, zéro souci",
+    description: "Louez votre bien à TrustHome : loyer garanti chaque mois, entretien inclus.",
+    images: ["/img/salon.jpg"],
+    locale: "fr_FR",
+    type: "website",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafaf7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e110f" },
+  ],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${ptSans.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
-      <head>
-        {/* Google Font links are now handled by next/font */}
-      </head>
-      <body className="font-body antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
-      </body>
+    <html lang="fr" className={geist.variable}>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
