@@ -1,176 +1,106 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* body {
-  font-family: var(--font-body), sans-serif; Removed as next/font handles this
-} */
+/* Palette alignée sur le logo et le tunnel : encre bleu marine, accent bleu du logo,
+   vert réservé à ce qui confirme un loyer versé. */
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --ink: #0b1b3f;
+  --muted: #56617a;
+  --line: #e2e6ee;
+  --accent: #134776;
+  --accent-ink: #ffffff;
+  --accent-soft: #eaf0f7;
+  --credit: #16a34a;
+  --credit-soft: #e8f6ed;
+  color-scheme: light;
+}
 
-@layer base {
-  :root {
-    --background: 0 0% 100%; /* Pure white background */
-    --foreground: 222.2 84% 4.9%; /* Almost black text */
+/* Thème sombre. Le script de layout.tsx pose data-theme="light" ou "dark" avant l'affichage
+   (choix mémorisé du visiteur, sinon réglage du système). La media query ne sert que
+   si JavaScript est désactivé. */
+:root[data-theme="dark"] {
+  --bg: #08122a;
+  --surface: #0f1b38;
+  --ink: #eef2f9;
+  --muted: #a3aec4;
+  --line: #1f2d4d;
+  --accent: #9cc0ec;
+  --accent-ink: #08122a;
+  --accent-soft: #15264a;
+  --credit: #4ade80;
+  --credit-soft: #10301f;
+  color-scheme: dark;
+}
 
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 221.2 83.2% 53.3%; /* Professional blue #2563eb */
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96%; /* Very light blue-gray */
-    --secondary-foreground: 222.2 84% 4.9%;
-
-    --muted: 210 40% 96%; /* Consistent with secondary */
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 142.1 76.2% 36.3%; /* Professional green #16a34a */
-    --accent-foreground: 355.7 100% 97.3%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --success: 142.1 76.2% 36.3%; /* Same as accent for consistency */
-    --success-foreground: 355.7 100% 97.3%;
-
-    --border: 214.3 31.8% 91.4%; /* Light border */
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%; /* Primary color for focus rings */
-
-    --radius: 0.75rem; /* Slightly more rounded for modern look */
-
-    --chart-1: 221.2 83.2% 53.3%;
-    --chart-2: 142.1 76.2% 36.3%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-
-    /* Sidebar variables */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 222.2 84% 4.9%;
-    --sidebar-primary: 221.2 83.2% 53.3%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 142.1 76.2% 36.3%;
-    --sidebar-accent-foreground: 355.7 100% 97.3%;
-    --sidebar-border: 214.3 31.8% 91.4%;
-    --sidebar-ring: 221.2 83.2% 53.3%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%; /* Dark background */
-    --foreground: 210 40% 98%; /* Light text */
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 217.2 91.2% 59.8%; /* Brighter blue for dark mode */
-    --primary-foreground: 222.2 84% 4.9%;
-
-    --secondary: 217.2 32.6% 17.5%; /* Dark blue-gray */
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 142.1 70.6% 45.3%; /* Brighter green for dark mode */
-    --accent-foreground: 222.2 84% 4.9%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --success: 142.1 70.6% 45.3%; /* Same as accent */
-    --success-foreground: 222.2 84% 4.9%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 217.2 91.2% 59.8%;
-
-    --chart-1: 217.2 91.2% 59.8%;
-    --chart-2: 142.1 70.6% 45.3%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-
-    --sidebar-background: 217.2 32.6% 17.5%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217.2 91.2% 59.8%;
-    --sidebar-primary-foreground: 222.2 84% 4.9%;
-    --sidebar-accent: 142.1 70.6% 45.3%;
-    --sidebar-accent-foreground: 222.2 84% 4.9%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #08122a;
+    --surface: #0f1b38;
+    --ink: #eef2f9;
+    --muted: #a3aec4;
+    --line: #1f2d4d;
+    --accent: #9cc0ec;
+    --accent-ink: #08122a;
+    --accent-soft: #15264a;
+    --credit: #4ade80;
+    --credit-soft: #10301f;
+    color-scheme: dark;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-credit: var(--credit);
+  --color-credit-soft: var(--credit-soft);
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 
-@layer utilities {
-  .animate-tilt {
-    animation: tilt 10s infinite linear;
-  }
-  
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out;
-  }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-@keyframes tilt {
-  0%, 50%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(1deg);
-  }
-  75% {
-    transform: rotate(-1deg);
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+body {
+  background: var(--bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
+/* Apparition douce au scroll (voir Reveal). */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+    transition: none;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+details summary::-webkit-details-marker {
+  display: none;
 }

@@ -1,40 +1,20 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Moon, Sun } from "lucide-react";
+import { applyTheme } from "@/lib/theme";
 
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-export function ThemeToggle() {
-  const { setTheme } = useTheme()
-
+// Les deux icônes sont rendues et le CSS affiche la bonne : pas de décalage à l'hydratation.
+export function ThemeToggle({ className = "" }: { className?: string }) {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
+    <button
+      type="button"
+      onClick={() => applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark")}
+      className={`flex size-9 items-center justify-center rounded-full text-muted transition-colors hover:bg-accent-soft hover:text-ink ${className}`}
+    >
+      <Moon size={18} aria-hidden="true" className="dark:hidden" />
+      <Sun size={18} aria-hidden="true" className="hidden dark:block" />
+      <span className="sr-only dark:hidden">Passer en mode sombre</span>
+      <span className="sr-only hidden dark:inline">Passer en mode clair</span>
+    </button>
+  );
 }
