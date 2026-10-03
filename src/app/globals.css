@@ -11,8 +11,8 @@
   --accent: #134776;
   --accent-ink: #ffffff;
   --accent-soft: #eaf0f7;
-  --credit: #16a34a;
-  --credit-soft: #e8f6ed;
+  --credit: #15803d;
+  --credit-ink: #ffffff;
   color-scheme: light;
 }
 
@@ -29,7 +29,7 @@
   --accent-ink: #08122a;
   --accent-soft: #15264a;
   --credit: #4ade80;
-  --credit-soft: #10301f;
+  --credit-ink: #052e16;
   color-scheme: dark;
 }
 
@@ -44,7 +44,7 @@
     --accent-ink: #08122a;
     --accent-soft: #15264a;
     --credit: #4ade80;
-    --credit-soft: #10301f;
+    --credit-ink: #052e16;
     color-scheme: dark;
   }
 }
@@ -61,7 +61,7 @@
   --color-accent-ink: var(--accent-ink);
   --color-accent-soft: var(--accent-soft);
   --color-credit: var(--credit);
-  --color-credit-soft: var(--credit-soft);
+  --color-credit-ink: var(--credit-ink);
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 

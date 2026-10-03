@@ -131,9 +131,9 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 shadow-xl shadow-black/5 sm:-left-8">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-credit-soft text-credit">
-                <Check size={20} />
+            <div className="absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 shadow-xl shadow-black/5 sm:-left-8 dark:border-white/15 dark:shadow-black/50">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-credit text-credit-ink">
+                <Check size={20} strokeWidth={2.5} aria-hidden="true" />
               </span>
               <div>
                 <p className="text-sm font-semibold">Loyer versé</p>
