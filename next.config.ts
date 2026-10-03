@@ -1,24 +1,12 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
+// Export statique (servi par Netlify) : pas de serveur, pas d'optimisation d'image à la volée.
+// Les photos de public/img sont redimensionnées en amont (1600 px max).
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '',
-  assetPrefix: '',
   images: {
     unoptimized: true,
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-  },
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
   },
 };
 

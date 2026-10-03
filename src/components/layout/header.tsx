@@ -1,69 +1,73 @@
 import Link from 'next/link';
-import { Home, Menu } from 'lucide-react';
+import { Menu, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Logo } from '@/components/brand/logo';
+import { FunnelButton } from '@/components/analytics/funnel-button';
+import { TrackedLink } from '@/components/analytics/tracked-link';
+import { CONTACT, TEL_HREF } from '@/lib/site';
+
+const navItems = [
+  { href: '/#engagements', label: 'Nos engagements' },
+  { href: '/#fonctionnement', label: 'Comment ça marche' },
+  { href: '/#avis', label: 'Avis' },
+  { href: '/#questions', label: 'Questions' },
+];
 
 export function Header() {
-  const navItems = [
-    { href: '#hero', label: 'Accueil' },
-    { href: '#storytelling', label: 'Notre Histoire' },
-    { href: '#process', label: 'Comment ça marche' },
-    { href: '#comparison', label: 'Avantages' },
-    { href: '#faq', label: 'FAQ' },
-    { href: '#contact', label: 'Contact' }
-  ];
-
   return (
-    <header className="py-4 px-4 md:px-6 bg-background shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <Home className="h-8 w-8 text-primary" />
-          <h1 className="text-2xl md:text-3xl font-headline font-bold text-primary">TrustHome</h1>
+    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
+      <div className="container flex h-16 items-center justify-between gap-4">
+        <Link href="/" aria-label="TrustHome, accueil">
+          <Logo />
         </Link>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+
+        <nav aria-label="Navigation principale" className="hidden items-center gap-6 lg:flex">
           {navItems.map((item) => (
-            <Link 
-              key={item.href}
-              href={item.href} 
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
+            <Link key={item.href} href={item.href} className="text-sm font-medium text-muted-foreground hover:text-navy">
               {item.label}
             </Link>
           ))}
-          <ThemeToggle />
-          <Button asChild className="bg-accent hover:bg-accent/90">
-            <Link href="#contact">Démarrer</Link>
-          </Button>
         </nav>
 
-        {/* Mobile Navigation */}
-        <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <TrackedLink
+            href={TEL_HREF}
+            intent={{ kind: 'contact', method: 'phone' }}
+            className="hidden items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-navy hover:bg-secondary md:inline-flex"
+          >
+            <Phone className="size-4" aria-hidden="true" />
+            {CONTACT.phoneDisplay}
+          </TrackedLink>
+          <FunnelButton placement="header" size="default" className="hidden sm:inline-flex" />
+
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+              <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Ouvrir le menu">
+                <Menu className="size-6" />
               </Button>
             </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <nav className="flex flex-col space-y-4 mt-8">
-              {navItems.map((item) => (
-                <Link 
-                  key={item.href}
-                  href={item.href} 
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2 border-b border-border"
+            <SheetContent side="right" className="w-[300px]" aria-describedby={undefined}>
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <nav aria-label="Navigation mobile" className="mt-8 flex flex-col">
+                {navItems.map((item) => (
+                  <SheetClose asChild key={item.href}>
+                    <Link href={item.href} className="border-b py-3 font-medium text-navy">
+                      {item.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+                <TrackedLink
+                  href={TEL_HREF}
+                  intent={{ kind: 'contact', method: 'phone' }}
+                  className="flex items-center gap-2 border-b py-3 font-medium text-navy"
                 >
-                  {item.label}
-                </Link>
-              ))}
-              <Button asChild className="bg-accent hover:bg-accent/90 mt-4">
-                <Link href="#contact">Démarrer</Link>
-              </Button>
-            </nav>
-          </SheetContent>
+                  <Phone className="size-4" aria-hidden="true" />
+                  {CONTACT.phoneDisplay}
+                </TrackedLink>
+                <FunnelButton placement="menu-mobile" size="lg" className="mt-6" />
+              </nav>
+            </SheetContent>
           </Sheet>
         </div>
       </div>

@@ -1,40 +1,71 @@
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
+import { Hero } from '@/components/landing/hero';
+import { Commitments } from '@/components/landing/commitments';
+import { Comparison } from '@/components/landing/comparison';
+import { Process } from '@/components/landing/process';
+import { Testimonials } from '@/components/landing/testimonials';
+import { Gallery } from '@/components/landing/gallery';
+import { Faq, faqItems } from '@/components/landing/faq';
+import { FinalCta } from '@/components/landing/final-cta';
+import { MobileCtaBar } from '@/components/landing/mobile-cta-bar';
+import { COMPANY, CONTACT, SITE_URL } from '@/lib/site';
 
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { HeroSection } from "@/components/landing/hero-section";
-import { StorytellingSection } from "@/components/landing/storytelling-section";
-import { ProcessSection } from "@/components/landing/process-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { FaqSection } from "@/components/landing/faq-section";
-import { ContactSection } from "@/components/landing/contact-section";
-import { ComparisonSection } from "@/components/landing/comparison-section";
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: COMPANY.name,
+      legalName: COMPANY.legalName,
+      url: SITE_URL,
+      logo: `${SITE_URL}/brand/logo-mark.svg`,
+      telephone: CONTACT.phoneIntl,
+      email: CONTACT.email,
+      taxID: COMPANY.siren.replace(/\s/g, ''),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '60 rue François Ier',
+        postalCode: '75008',
+        addressLocality: 'Paris',
+        addressCountry: 'FR',
+      },
+      areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+      description:
+        'Société locataire de logements en Île-de-France : TrustHome loue le logement, verse le loyer convenu chaque mois et paie le ménage et l’entretien courant.',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
+      />
       <Header />
-      <main className="flex-grow">
-        <section id="hero">
-          <HeroSection />
-        </section>
-        <section id="storytelling">
-          <StorytellingSection />
-        </section>
-        <section id="process">
-          <ProcessSection />
-        </section>
-        <section id="comparison">
-          <ComparisonSection />
-        </section>
-        <section id="faq">
-          <FaqSection />
-        </section>
-        <section id="contact">
-          <ContactSection />
-        </section>
-        <TestimonialsSection />
+      <main>
+        <Hero />
+        <Commitments />
+        <Comparison />
+        <Process />
+        <Testimonials />
+        <Gallery />
+        <Faq />
+        <FinalCta />
       </main>
       <Footer />
-    </div>
+      <MobileCtaBar />
+    </>
   );
 }

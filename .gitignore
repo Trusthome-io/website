@@ -48,3 +48,6 @@ firestore-debug.log
 
 # CSV exports (DNS, domains)
 *.csv
+
+# Captures de vérification locales
+.playwright-mcp/
