@@ -13,10 +13,28 @@
   --accent-soft: #eaf0f7;
   --credit: #16a34a;
   --credit-soft: #e8f6ed;
+  color-scheme: light;
+}
+
+/* Thème sombre. Le script de layout.tsx pose data-theme="light" ou "dark" avant l'affichage
+   (choix mémorisé du visiteur, sinon réglage du système). La media query ne sert que
+   si JavaScript est désactivé. */
+:root[data-theme="dark"] {
+  --bg: #08122a;
+  --surface: #0f1b38;
+  --ink: #eef2f9;
+  --muted: #a3aec4;
+  --line: #1f2d4d;
+  --accent: #9cc0ec;
+  --accent-ink: #08122a;
+  --accent-soft: #15264a;
+  --credit: #4ade80;
+  --credit-soft: #10301f;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #08122a;
     --surface: #0f1b38;
     --ink: #eef2f9;
@@ -27,8 +45,11 @@
     --accent-soft: #15264a;
     --credit: #4ade80;
     --credit-soft: #10301f;
+    color-scheme: dark;
   }
 }
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme inline {
   --color-bg: var(--bg);
@@ -57,6 +78,7 @@ html {
 
 body {
   background: var(--bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }

@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { nav } from "@/content";
 import { Logo } from "@/components/logo";
 import { FunnelLink } from "@/components/funnel-link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,19 +37,23 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <ThemeToggle />
           <FunnelLink placement="header" variant="ink" className="px-4 py-2 text-sm" />
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="-mr-2 p-2 md:hidden"
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={open}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="-mr-2 flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="p-2"
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={open}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {open && (

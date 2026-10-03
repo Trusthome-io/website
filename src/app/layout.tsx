@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { ConsentBanner } from "@/components/consent-banner";
 import { SITE_URL } from "@/content";
+import { themeScript } from "@/lib/theme";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
@@ -27,16 +28,18 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
 };
 
+// Une seule couleur ici : le script de thème la met à jour selon le thème choisi.
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f8fa" },
-    { media: "(prefers-color-scheme: dark)", color: "#08122a" },
-  ],
+  themeColor: "#f7f8fa",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={geist.variable}>
+    // data-theme est posé par le script avant l'hydratation, d'où suppressHydrationWarning.
+    <html lang="fr" className={geist.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="font-sans">
         {children}
         <ConsentBanner />
