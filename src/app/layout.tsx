@@ -1,34 +1,46 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
+import { ConsentBanner } from "@/components/consent-banner";
+import { SITE_URL } from "@/content";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
 
+const title = "TrustHome : une entreprise loue votre logement, loyer garanti chaque mois";
+const description =
+  "Propriétaires partout en France métropolitaine : TrustHome signe le bail, vous verse le loyer convenu chaque mois au plus tard le 5, même si le logement est vide, et paie le ménage et l'entretien. Aucun frais de gestion.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://trusthome.io"),
-  title: "TrustHome — Loyer garanti, zéro souci",
-  description:
-    "Louez votre bien à TrustHome : loyer garanti chaque mois, entretien inclus, aucun frais d'agence.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: title, template: "%s | TrustHome" },
+  description,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "TrustHome — Loyer garanti, zéro souci",
-    description: "Louez votre bien à TrustHome : loyer garanti chaque mois, entretien inclus.",
-    images: ["/img/salon.jpg"],
-    locale: "fr_FR",
     type: "website",
+    locale: "fr_FR",
+    url: "/",
+    siteName: "TrustHome",
+    title,
+    description,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Cuisine d'un logement loué par TrustHome" }],
   },
+  twitter: { card: "summary_large_image", title, description, images: ["/og.jpg"] },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafaf7" },
-    { media: "(prefers-color-scheme: dark)", color: "#0e110f" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f8fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#08122a" },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={geist.variable}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <ConsentBanner />
+      </body>
     </html>
   );
 }

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  ArrowRight,
   CalendarCheck,
   Check,
   Mail,
@@ -14,14 +13,68 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/header";
 import { Reveal } from "@/components/reveal";
-import { ContactForm } from "@/components/contact-form";
-import { benefits, comparison, faq, nav, site, stats, steps, testimonials } from "@/content";
+import { Footer } from "@/components/footer";
+import { FunnelLink } from "@/components/funnel-link";
+import { MobileCta } from "@/components/mobile-cta";
+import { TrackedLink } from "@/components/tracked-link";
+import { benefits, comparison, faq, site, SITE_URL, stats, steps, summary, testimonials } from "@/content";
 
 const icons = {
   calendar: CalendarCheck,
   shield: ShieldCheck,
   sparkles: Sparkles,
   trending: TrendingUp,
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: site.name,
+      legalName: site.legalName,
+      url: SITE_URL,
+      logo: `${SITE_URL}/brand/logo-mark.svg`,
+      description: summary,
+      telephone: site.phoneIntl,
+      email: site.email,
+      taxID: site.siren.replace(/\s/g, ""),
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "60 rue François Ier",
+        postalCode: "75008",
+        addressLocality: "Paris",
+        addressCountry: "FR",
+      },
+      areaServed: { "@type": "Country", name: "France" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: site.name,
+      inLanguage: "fr-FR",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Service",
+      name: "Location de logement par une entreprise, loyer versé chaque mois",
+      serviceType: "Location longue durée de logements à des propriétaires",
+      description: summary,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: { "@type": "Country", name: "France" },
+      audience: { "@type": "Audience", audienceType: "Propriétaires de logements" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
+  ],
 };
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -31,6 +84,10 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <Header />
       <main id="top">
         {/* Hero */}
@@ -38,7 +95,7 @@ export default function Home() {
           <Reveal>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-sm text-muted">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Île-de-France & Normandie
+              Partout en France métropolitaine
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
               Votre loyer garanti.
@@ -50,13 +107,7 @@ export default function Home() {
               de tout le reste.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 font-medium text-accent-ink transition-opacity hover:opacity-90"
-              >
-                Estimer mon loyer
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-0.5" />
-              </a>
+              <FunnelLink placement="hero" />
               <a
                 href="#processus"
                 className="inline-flex items-center justify-center rounded-full border border-line px-6 py-3.5 font-medium transition-colors hover:border-ink"
@@ -64,13 +115,16 @@ export default function Home() {
                 Comment ça marche
               </a>
             </div>
+            <p className="mt-4 text-sm text-muted">
+              5 questions, environ 2 minutes. Sans engagement : vous lisez le bail avant de signer.
+            </p>
           </Reveal>
 
           <Reveal delay={150} className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
               <Image
                 src="/img/salon.jpg"
-                alt="Salon lumineux d'un appartement géré par TrustHome"
+                alt="Salon lumineux d'un logement loué par TrustHome"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 45vw"
@@ -78,7 +132,7 @@ export default function Home() {
               />
             </div>
             <div className="absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 shadow-xl shadow-black/5 sm:-left-8">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft text-accent">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-credit-soft text-credit">
                 <Check size={20} />
               </span>
               <div>
@@ -176,6 +230,9 @@ export default function Home() {
               </li>
             ))}
           </ol>
+          <Reveal className="mt-14">
+            <FunnelLink placement="fonctionnement" label="Commencer : 5 questions" />
+          </Reveal>
         </section>
 
         {/* Comparatif */}
@@ -198,11 +255,11 @@ export default function Home() {
                 >
                   <div className="px-5 pt-5 font-semibold md:p-5">{row.label}</div>
                   <div className="flex gap-3 px-5 py-3 text-[15px] text-muted md:p-5">
-                    <Minus size={18} className="mt-0.5 shrink-0" />
+                    <Minus size={18} className="mt-0.5 shrink-0" aria-label="Location classique" />
                     {row.classic}
                   </div>
                   <div className="flex gap-3 bg-accent-soft px-5 py-3 pb-5 text-[15px] md:p-5">
-                    <Check size={18} className="mt-0.5 shrink-0 text-accent" />
+                    <Check size={18} className="mt-0.5 shrink-0 text-credit" aria-label="Avec TrustHome" />
                     {row.us}
                   </div>
                 </div>
@@ -269,63 +326,48 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-[1fr_1.4fr] md:py-32">
+        <section id="contact" className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-[1.4fr_1fr] md:py-32">
           <Reveal>
             <Eyebrow>Contact</Eyebrow>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Combien pourrait vous rapporter votre bien ?</h2>
-            <p className="mt-4 text-lg text-muted">Estimation gratuite et sans engagement.</p>
-            <ul className="mt-10 space-y-3">
-              {[
-                { href: site.phoneHref, icon: Phone, label: site.phone, hint: "Appeler" },
-                { href: site.whatsappHref, icon: MessageCircle, label: "WhatsApp", hint: "Discuter" },
-                { href: `mailto:${site.email}`, icon: Mail, label: site.email, hint: "Écrire" },
-              ].map(({ href, icon: Icon, label, hint }) => (
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Votre logement correspond-il ?</h2>
+            <p className="mt-4 max-w-lg text-lg leading-relaxed text-muted">
+              Répondez à cinq questions sur votre logement : où il se trouve, son type, s&apos;il est meublé, quand il
+              est libre et le loyer que vous visez. Nous vous rappelons sous 24 heures.
+            </p>
+            <FunnelLink placement="contact" className="mt-8" />
+            <p className="mt-4 text-sm text-muted">Gratuit et sans engagement. Vos données ne sont jamais revendues.</p>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="text-sm text-muted">Ou directement, 7 jours sur 7 :</p>
+            <ul className="mt-4 space-y-3">
+              {(
+                [
+                  { href: site.phoneHref, icon: Phone, label: site.phone, hint: "Appeler", method: "phone" },
+                  { href: site.whatsappHref, icon: MessageCircle, label: "WhatsApp", hint: "Discuter", method: "whatsapp" },
+                  { href: `mailto:${site.email}`, icon: Mail, label: site.email, hint: "Écrire", method: "email" },
+                ] as const
+              ).map(({ href, icon: Icon, label, hint, method }) => (
                 <li key={hint}>
-                  <a
+                  <TrackedLink
                     href={href}
+                    intent={{ kind: "contact", method }}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group flex items-center gap-4 rounded-2xl border border-line p-4 transition-colors hover:border-ink"
+                    className="group flex items-center gap-4 rounded-2xl border border-line bg-surface p-4 transition-colors hover:border-ink"
                   >
-                    <Icon size={20} className="text-accent" strokeWidth={1.75} />
+                    <Icon size={20} className="text-accent" strokeWidth={1.75} aria-hidden="true" />
                     <span className="min-w-0 flex-1 truncate">{label}</span>
-                    <span className="text-sm text-muted group-hover:text-ink">{hint} →</span>
-                  </a>
+                    <span className="text-sm text-muted group-hover:text-ink">{hint}</span>
+                  </TrackedLink>
                 </li>
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={120}>
-            <ContactForm />
-          </Reveal>
         </section>
       </main>
 
-      <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 md:flex-row md:items-start md:justify-between">
-          <div>
-            <p className="text-lg font-semibold tracking-tight">
-              {site.name}
-              <span className="text-accent">.</span>
-            </p>
-            <p className="mt-2 max-w-xs text-sm text-muted">Loyer garanti et gestion sans souci pour les propriétaires.</p>
-            <p className="mt-2 text-sm text-muted">{site.city}</p>
-          </div>
-          <nav className="grid grid-cols-2 gap-x-12 gap-y-2 text-sm text-muted">
-            {nav.map((item) => (
-              <a key={item.href} href={item.href} className="hover:text-ink">
-                {item.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 border-t border-line px-5 py-6 text-xs text-muted sm:flex-row sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {site.name}. Tous droits réservés.
-          </p>
-          <p>Service basé en France · Conforme RGPD</p>
-        </div>
-      </footer>
+      <Footer />
+      <MobileCta />
     </>
   );
 }

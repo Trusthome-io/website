@@ -1,0 +1,278 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - link "TrustHome." [ref=f6e4] [cursor=pointer]:
+        - /url: "#top"
+      - navigation [ref=f6e5]:
+        - link "Avantages" [ref=f6e6] [cursor=pointer]:
+          - /url: "#avantages"
+        - link "Fonctionnement" [ref=f6e7] [cursor=pointer]:
+          - /url: "#processus"
+        - link "Comparatif" [ref=f6e8] [cursor=pointer]:
+          - /url: "#comparatif"
+        - link "Avis" [ref=f6e9] [cursor=pointer]:
+          - /url: "#avis"
+        - link "FAQ" [ref=f6e10] [cursor=pointer]:
+          - /url: "#faq"
+      - link "Estimer mon loyer" [ref=f6e11] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=f6e12]:
+    - generic [ref=f6e13]:
+      - generic [ref=f6e14]:
+        - paragraph [ref=f6e15]: Île-de-France & Normandie
+        - heading "Votre loyer garanti. Sans les contraintes." [level=1] [ref=f6e17]: Votre loyer garanti.Sans les contraintes.
+        - paragraph [ref=f6e18]: TrustHome devient votre locataire longue durée. Vous touchez un loyer fixe chaque mois, on s'occupe de tout le reste.
+        - generic [ref=f6e19]:
+          - link "Estimer mon loyer" [ref=f6e20] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Comment ça marche" [ref=f6e23] [cursor=pointer]:
+            - /url: "#processus"
+      - generic [ref=f6e24]:
+        - img "Salon lumineux d'un appartement géré par TrustHome" [ref=f6e26]
+        - generic [ref=f6e31]:
+          - paragraph [ref=f6e32]: Loyer versé
+          - paragraph [ref=f6e33]: Chaque mois, à date fixe
+    - generic [ref=f6e35]:
+      - generic [ref=f6e36]:
+        - paragraph [ref=f6e37]: 100 %
+        - paragraph [ref=f6e38]: du loyer versé à date fixe
+      - generic [ref=f6e39]:
+        - paragraph [ref=f6e40]: 0 €
+        - paragraph [ref=f6e41]: de frais d'agence ou de GLI
+      - generic [ref=f6e42]:
+        - paragraph [ref=f6e43]: 1 à 3 ans
+        - paragraph [ref=f6e44]: de bail flexible et renouvelable
+    - generic [ref=f6e45]:
+      - generic [ref=f6e46]:
+        - paragraph [ref=f6e47]: Avantages
+        - heading "La rentabilité d'une location, la tranquillité en plus." [level=2] [ref=f6e48]
+      - generic [ref=f6e49]:
+        - generic [ref=f6e50]:
+          - heading "Loyer garanti" [level=3] [ref=f6e54]
+          - paragraph [ref=f6e55]: Votre loyer chaque mois, à date fixe, même si le bien est vacant. Plus besoin d'assurance loyers impayés.
+        - generic [ref=f6e56]:
+          - heading "Zéro tracas" [level=3] [ref=f6e60]
+          - paragraph [ref=f6e61]: "Exploitation, entretien, petites réparations : TrustHome s'occupe de tout. Un seul interlocuteur."
+        - generic [ref=f6e62]:
+          - heading "Bien valorisé" [level=3] [ref=f6e66]
+          - paragraph [ref=f6e67]: Ménage professionnel régulier, embellissements et maintenance préventive. Votre bien reste impeccable.
+        - generic [ref=f6e68]:
+          - heading "Levier bancaire" [level=3] [ref=f6e72]
+          - paragraph [ref=f6e73]: Des revenus réguliers et un bail solide, appréciés des banques pour vos futurs projets.
+    - generic [ref=f6e75]:
+      - generic [ref=f6e76]:
+        - img "Cuisine équipée" [ref=f6e78]
+        - img "Chambre principale" [ref=f6e80]
+        - img "Salle de bain" [ref=f6e82]
+        - img "Chambre" [ref=f6e84]
+      - generic [ref=f6e85]:
+        - paragraph [ref=f6e86]: Le constat
+        - heading "Louer soi-même, c'est souvent plus de stress que prévu." [level=2] [ref=f6e87]
+        - paragraph [ref=f6e88]: Retards de paiement, dégradations, vacance locative, crainte du squat… Votre investissement peut vite devenir une source d'inquiétude.
+        - paragraph [ref=f6e89]: Avec TrustHome, vous avez un seul locataire professionnel qui paie à date fixe, entretient et valorise votre bien.
+        - paragraph [ref=f6e90]: Vous n'avez plus qu'à encaisser.
+    - generic [ref=f6e91]:
+      - generic [ref=f6e92]:
+        - paragraph [ref=f6e93]: Fonctionnement
+        - heading "Quatre étapes, et c'est réglé." [level=2] [ref=f6e94]
+      - list [ref=f6e95]:
+        - listitem [ref=f6e96]:
+          - generic [ref=f6e97]:
+            - generic [ref=f6e98]: "01"
+            - heading "Vous nous présentez votre bien" [level=3] [ref=f6e99]
+            - paragraph [ref=f6e100]: Un court formulaire ou un appel suffit pour démarrer.
+        - listitem [ref=f6e101]:
+          - generic [ref=f6e102]:
+            - generic [ref=f6e103]: "02"
+            - heading "Visite & évaluation" [level=3] [ref=f6e104]
+            - paragraph [ref=f6e105]: Nous visitons le bien et vous faisons une proposition de loyer claire et transparente.
+        - listitem [ref=f6e106]:
+          - generic [ref=f6e107]:
+            - generic [ref=f6e108]: "03"
+            - heading "Signature du bail" [level=3] [ref=f6e109]
+            - paragraph [ref=f6e110]: Un contrat rédigé par des avocats, sur 1, 2, 3 ans ou plus. TrustHome devient votre locataire.
+        - listitem [ref=f6e111]:
+          - generic [ref=f6e112]:
+            - generic [ref=f6e113]: "04"
+            - heading "Vous encaissez" [level=3] [ref=f6e114]
+            - paragraph [ref=f6e115]: Le loyer tombe chaque mois. Nous assurons l'entretien et la maintenance, vous profitez.
+    - generic [ref=f6e117]:
+      - generic [ref=f6e118]:
+        - paragraph [ref=f6e119]: Comparatif
+        - heading "Location classique ou TrustHome ?" [level=2] [ref=f6e120]
+      - generic [ref=f6e121]:
+        - generic [ref=f6e122]:
+          - generic [ref=f6e124]: Location classique
+          - generic [ref=f6e125]: Avec TrustHome
+        - generic [ref=f6e126]:
+          - generic [ref=f6e127]: Revenus
+          - generic [ref=f6e128]: Risque d'impayés et de vacance locative.
+          - generic [ref=f6e130]: Loyer garanti à date fixe, même si le bien est vide.
+        - generic [ref=f6e133]:
+          - generic [ref=f6e134]: Frais
+          - generic [ref=f6e135]: Frais d'agence (5–10 %) et assurance loyers impayés (2–4 %).
+          - generic [ref=f6e137]: Aucun frais d'agence, aucune GLI à payer.
+        - generic [ref=f6e140]:
+          - generic [ref=f6e141]: Sécurité
+          - generic [ref=f6e142]: Risque de squat, bail rigide et préavis longs.
+          - generic [ref=f6e144]: Un seul locataire professionnel, contrat souple avec clauses de sortie.
+        - generic [ref=f6e147]:
+          - generic [ref=f6e148]: Entretien
+          - generic [ref=f6e149]: À votre charge, bien souvent rendu usé.
+          - generic [ref=f6e151]: Ménage pro, embellissements et maintenance préventive inclus.
+        - generic [ref=f6e154]:
+          - generic [ref=f6e155]: Charge mentale
+          - generic [ref=f6e156]: Imprévus, relations locataires, administratif.
+          - generic [ref=f6e158]: Aucune implication au quotidien.
+    - generic [ref=f6e161]:
+      - generic [ref=f6e162]:
+        - paragraph [ref=f6e163]: Avis
+        - heading "Ils nous ont confié leur bien." [level=2] [ref=f6e164]
+      - generic [ref=f6e165]:
+        - figure "M Maxime D. T3 · Clichy (92)" [ref=f6e167]:
+          - paragraph [ref=f6e168]: ★★★★★
+          - blockquote [ref=f6e169]: « Loyer versé à date fixe, zéro tracas administratif. L'équipe est disponible, réactive et vraiment professionnelle. »
+          - generic [ref=f6e170]:
+            - generic [ref=f6e171]: M
+            - generic [ref=f6e172]:
+              - generic [ref=f6e173]: Maxime D.
+              - generic [ref=f6e174]: T3 · Clichy (92)
+        - figure "D David P. Maison · Saint-Germain-en-Laye (78)" [ref=f6e176]:
+          - paragraph [ref=f6e177]: ★★★★★
+          - blockquote [ref=f6e178]: « J'avais des inquiétudes à l'idée de louer pendant mon expatriation. Le loyer est versé régulièrement et la maison est bien entretenue. »
+          - generic [ref=f6e179]:
+            - generic [ref=f6e180]: D
+            - generic [ref=f6e181]:
+              - generic [ref=f6e182]: David P.
+              - generic [ref=f6e183]: Maison · Saint-Germain-en-Laye (78)
+        - figure "N Nathalie M. T3 · Versailles (78)" [ref=f6e185]:
+          - paragraph [ref=f6e186]: ★★★★★
+          - blockquote [ref=f6e187]: « Un loyer régulier chaque mois sans rien gérer. Je peux profiter de ma retraite tranquillement. »
+          - generic [ref=f6e188]:
+            - generic [ref=f6e189]: "N"
+            - generic [ref=f6e190]:
+              - generic [ref=f6e191]: Nathalie M.
+              - generic [ref=f6e192]: T3 · Versailles (78)
+        - figure "I Isabelle B. T2 · Asnières-sur-Seine (92)" [ref=f6e194]:
+          - paragraph [ref=f6e195]: ★★★★★
+          - blockquote [ref=f6e196]: « J'étais sceptique au début. Zéro vacance locative, un entretien nickel. »
+          - generic [ref=f6e197]:
+            - generic [ref=f6e198]: I
+            - generic [ref=f6e199]:
+              - generic [ref=f6e200]: Isabelle B.
+              - generic [ref=f6e201]: T2 · Asnières-sur-Seine (92)
+        - figure "T Thomas R. Maison · Deauville (14)" [ref=f6e203]:
+          - paragraph [ref=f6e204]: ★★★★★
+          - blockquote [ref=f6e205]: « Le loyer est versé régulièrement, le bien est entretenu et j'ai des nouvelles de la gestion. Je regrette de ne pas les avoir connus plus tôt. »
+          - generic [ref=f6e206]:
+            - generic [ref=f6e207]: T
+            - generic [ref=f6e208]:
+              - generic [ref=f6e209]: Thomas R.
+              - generic [ref=f6e210]: Maison · Deauville (14)
+    - generic [ref=f6e212]:
+      - generic [ref=f6e213]:
+        - paragraph [ref=f6e214]: FAQ
+        - heading "Vos questions." [level=2] [ref=f6e215]
+        - paragraph [ref=f6e216]:
+          - text: Une autre question ?
+          - link "Écrivez-nous" [ref=f6e217] [cursor=pointer]:
+            - /url: "#contact"
+          - text: .
+      - generic [ref=f6e218]:
+        - group [ref=f6e219]:
+          - generic "Comment fonctionne TrustHome ?" [ref=f6e220] [cursor=pointer]
+        - group [ref=f6e222]:
+          - generic "Mon loyer est-il garanti si le bien n'est pas occupé ?" [ref=f6e223] [cursor=pointer]
+        - group [ref=f6e225]:
+          - generic "Qui s'occupe de l'entretien et des réparations ?" [ref=f6e226] [cursor=pointer]
+        - group [ref=f6e228]:
+          - generic "Quels sont les frais ?" [ref=f6e229] [cursor=pointer]
+        - group [ref=f6e231]:
+          - generic "Qui occupe le logement ?" [ref=f6e232] [cursor=pointer]
+        - group [ref=f6e234]:
+          - generic "Quelle est la durée du contrat ?" [ref=f6e235] [cursor=pointer]
+        - group [ref=f6e237]:
+          - generic "Et en cas de dégradations ?" [ref=f6e238] [cursor=pointer]
+        - group [ref=f6e240]:
+          - generic "Suis-je protégé contre le risque de squat ?" [ref=f6e241] [cursor=pointer]
+        - group [ref=f6e243]:
+          - generic "Est-ce que cela aide pour un prêt bancaire ?" [ref=f6e244] [cursor=pointer]
+    - generic [ref=f6e246]:
+      - generic [ref=f6e247]:
+        - paragraph [ref=f6e248]: Contact
+        - heading "Combien pourrait vous rapporter votre bien ?" [level=2] [ref=f6e249]
+        - paragraph [ref=f6e250]: Estimation gratuite et sans engagement.
+        - list [ref=f6e251]:
+          - listitem [ref=f6e252]:
+            - link "07 81 68 55 56 Appeler →" [ref=f6e253] [cursor=pointer]:
+              - /url: tel:+33781685556
+              - generic [ref=f6e256]: 07 81 68 55 56
+              - generic [ref=f6e257]: Appeler →
+          - listitem [ref=f6e258]:
+            - link "WhatsApp Discuter →" [ref=f6e259] [cursor=pointer]:
+              - /url: https://wa.me/33781685556
+              - generic [ref=f6e262]: WhatsApp
+              - generic [ref=f6e263]: Discuter →
+          - listitem [ref=f6e264]:
+            - link "ajithanmoorthy@outlook.fr Écrire →" [ref=f6e265] [cursor=pointer]:
+              - /url: mailto:ajithanmoorthy@outlook.fr
+              - generic [ref=f6e269]: ajithanmoorthy@outlook.fr
+              - generic [ref=f6e270]: Écrire →
+      - generic [ref=f6e272]:
+        - generic [ref=f6e273]:
+          - text: Nom complet
+          - textbox "Nom complet" [ref=f6e274]:
+            - /placeholder: Jean Dupont
+        - generic [ref=f6e275]:
+          - text: Email
+          - textbox "Email" [ref=f6e276]:
+            - /placeholder: jean@exemple.fr
+        - generic [ref=f6e277]:
+          - text: Téléphone
+          - generic [ref=f6e278]: (facultatif)
+          - textbox "Téléphone (facultatif)" [ref=f6e279]:
+            - /placeholder: 06 12 34 56 78
+        - generic [ref=f6e280]:
+          - text: Type de bien
+          - combobox "Type de bien" [ref=f6e281]:
+            - option "Choisir…" [disabled] [selected]
+            - option "Studio"
+            - option "T2"
+            - option "T3"
+            - option "T4 et +"
+            - option "Maison"
+        - generic [ref=f6e282]:
+          - text: Ville ou adresse du bien
+          - textbox "Ville ou adresse du bien" [ref=f6e283]:
+            - /placeholder: Clichy, 92110
+        - generic [ref=f6e284]:
+          - text: Message
+          - generic [ref=f6e285]: (facultatif)
+          - textbox "Message (facultatif)" [ref=f6e286]:
+            - /placeholder: Surface, étage, disponibilité…
+        - generic [ref=f6e287]:
+          - paragraph [ref=f6e288]: Gratuit et sans engagement. Vos données ne sont jamais revendues.
+          - button "Recevoir mon estimation" [ref=f6e289]
+  - contentinfo [ref=f6e292]:
+    - generic [ref=f6e293]:
+      - generic [ref=f6e294]:
+        - paragraph [ref=f6e295]: TrustHome.
+        - paragraph [ref=f6e296]: Loyer garanti et gestion sans souci pour les propriétaires.
+        - paragraph [ref=f6e297]: Clichy, Hauts-de-Seine
+      - navigation [ref=f6e298]:
+        - link "Avantages" [ref=f6e299] [cursor=pointer]:
+          - /url: "#avantages"
+        - link "Fonctionnement" [ref=f6e300] [cursor=pointer]:
+          - /url: "#processus"
+        - link "Comparatif" [ref=f6e301] [cursor=pointer]:
+          - /url: "#comparatif"
+        - link "Avis" [ref=f6e302] [cursor=pointer]:
+          - /url: "#avis"
+        - link "FAQ" [ref=f6e303] [cursor=pointer]:
+          - /url: "#faq"
+    - generic [ref=f6e304]:
+      - paragraph [ref=f6e305]: © 2026 TrustHome. Tous droits réservés.
+      - paragraph [ref=f6e306]: Service basé en France · Conforme RGPD
+  - iframe [ref=f6e308]:
+    - alert [ref=f7e1]
+  - alert [ref=f6e309]

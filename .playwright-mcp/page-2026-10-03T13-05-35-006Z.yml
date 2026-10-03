@@ -1,0 +1,284 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "TrustHome, accueil" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: TRUSTHOME
+      - navigation "Navigation principale" [ref=e11]:
+        - link "Nos engagements" [ref=e12] [cursor=pointer]:
+          - /url: /#engagements
+        - link "Comment ça marche" [ref=e13] [cursor=pointer]:
+          - /url: /#fonctionnement
+        - link "Avis" [ref=e14] [cursor=pointer]:
+          - /url: /#avis
+        - link "Questions" [ref=e15] [cursor=pointer]:
+          - /url: /#questions
+      - generic [ref=e16]:
+        - link "07 81 68 55 56" [ref=e17] [cursor=pointer]:
+          - /url: tel:+33781685556
+        - link "Présenter mon logement" [ref=e20] [cursor=pointer]:
+          - /url: https://trusthome-proprietaires.vercel.app/?utm_source=trusthome.io&utm_medium=site&utm_campaign=vitrine&utm_content=header
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Propriétaires en Île-de-France, hors Paris
+        - heading "Une entreprise loue votre logement et vous verse le loyer chaque mois." [level=1] [ref=e26]
+        - paragraph [ref=e27]: "TrustHome signe le bail, paie le ménage et l'entretien courant, et ne prend aucun frais de gestion. Pas un inconnu vu vingt minutes en visite : une société, qui s'engage par contrat."
+        - generic [ref=e28]:
+          - link "Présenter mon logement" [ref=e29] [cursor=pointer]:
+            - /url: https://trusthome-proprietaires.vercel.app/?utm_source=trusthome.io&utm_medium=site&utm_campaign=vitrine&utm_content=hero
+          - link "Écrire sur WhatsApp" [ref=e30] [cursor=pointer]:
+            - /url: https://wa.me/33781685556?text=Bonjour%2C%20je%20suis%20propri%C3%A9taire%20et%20je%20voudrais%20en%20savoir%20plus%20sur%20TrustHome.
+        - paragraph [ref=e33]: "5 questions, environ 2 minutes. Sans engagement : vous lisez le bail avant de signer quoi que ce soit."
+        - paragraph [ref=e34]:
+          - text: Vous préférez parler ?
+          - link "07 81 68 55 56" [ref=e35] [cursor=pointer]:
+            - /url: tel:+33781685556
+      - figure "Illustration. Le montant est celui convenu dans votre bail." [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - paragraph [ref=e41]: Votre compte courant
+            - paragraph [ref=e42]: Opérations
+          - list [ref=e43]:
+            - listitem [ref=e44]:
+              - generic [ref=e45]: 05 juin
+              - generic [ref=e46]:
+                - text: VIR TRUSTHOME SAS
+                - generic [ref=e47]: Loyer juin
+              - generic [ref=e48]: + 1 250,00 €
+            - listitem [ref=e49]:
+              - generic [ref=e50]: 04 mai
+              - generic [ref=e51]:
+                - text: VIR TRUSTHOME SAS
+                - generic [ref=e52]: Loyer mai
+              - generic [ref=e53]: + 1 250,00 €
+            - listitem [ref=e54]:
+              - generic [ref=e55]: 03 avr.
+              - generic [ref=e56]:
+                - text: VIR TRUSTHOME SAS
+                - generic [ref=e57]: Loyer avril
+              - generic [ref=e58]: + 1 250,00 €
+            - listitem [ref=e59]:
+              - generic [ref=e60]: 05 mars
+              - generic [ref=e61]:
+                - text: VIR TRUSTHOME SAS
+                - generic [ref=e62]: Loyer mars
+              - generic [ref=e63]: + 1 250,00 €
+            - listitem [ref=e64]:
+              - generic [ref=e65]: 04 févr.
+              - generic [ref=e66]:
+                - text: VIR TRUSTHOME SAS
+                - generic [ref=e67]: Loyer février
+              - generic [ref=e68]: + 1 250,00 €
+            - listitem [ref=e69]:
+              - generic [ref=e70]: 05 janv.
+              - generic [ref=e71]:
+                - text: VIR TRUSTHOME SAS
+                - generic [ref=e72]: Loyer janvier
+              - generic [ref=e73]: + 1 250,00 €
+    - region [ref=e75]:
+      - generic [ref=e76]:
+        - heading "Nos engagements, écrits dans le bail" [level=2] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - term [ref=e80]: le 5
+            - definition [ref=e81]: Votre loyer convenu, versé chaque mois au plus tard le 5.
+          - generic [ref=e82]:
+            - term [ref=e83]: 0 €
+            - definition [ref=e84]: "Pour le ménage et l’entretien courant : c’est nous qui payons."
+          - generic [ref=e85]:
+            - term [ref=e86]: 0 €
+            - definition [ref=e87]: "De frais de gestion : nous ne gérons pas votre bien, nous le louons."
+          - generic [ref=e88]:
+            - term [ref=e89]: 24 h
+            - definition [ref=e90]: Pour vous rappeler si votre logement correspond.
+    - region [ref=e91]:
+      - generic [ref=e92]:
+        - heading "Ce qui change par rapport à une location classique" [level=2] [ref=e94]
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - generic [ref=e98]: Location classique
+            - generic [ref=e99]: Avec TrustHome
+          - generic [ref=e100]:
+            - heading "Le loyer" [level=3] [ref=e101]
+            - paragraph [ref=e102]:
+              - img "Location classique" [ref=e103]
+              - text: Risque d’impayés, vacance entre deux locataires, frais d’agence (5 à 10 %) et assurance loyers impayés (2 à 4 %).
+            - paragraph [ref=e106]:
+              - img "Avec TrustHome" [ref=e107]
+              - text: Loyer versé à date fixe, même quand le logement est vide. Aucuns frais, pas besoin d’assurance loyers impayés.
+          - generic [ref=e109]:
+            - heading "Le bail" [level=3] [ref=e110]
+            - paragraph [ref=e111]:
+              - img "Location classique" [ref=e112]
+              - text: Bail rigide, préavis longs, risque de squat en cas de conflit.
+            - paragraph [ref=e115]:
+              - img "Avec TrustHome" [ref=e116]
+              - text: "Bail flexible de 1 à 3 ans ou plus, avec clauses de sortie. Un seul locataire : notre société."
+          - generic [ref=e118]:
+            - heading "L’état du logement" [level=3] [ref=e119]
+            - paragraph [ref=e120]:
+              - img "Location classique" [ref=e121]
+              - text: Entretien à votre charge, logement souvent rendu usé.
+            - paragraph [ref=e124]:
+              - img "Avec TrustHome" [ref=e125]
+              - text: Ménage professionnel régulier, petites réparations, peinture et maintenance à notre charge.
+          - generic [ref=e127]:
+            - heading "Votre temps" [level=3] [ref=e128]
+            - paragraph [ref=e129]:
+              - img "Location classique" [ref=e130]
+              - text: Imprévus, relations avec le locataire, paperasse.
+            - paragraph [ref=e133]:
+              - img "Avec TrustHome" [ref=e134]
+              - text: "Aucune implication au quotidien. Un seul interlocuteur : TrustHome."
+          - generic [ref=e136]:
+            - heading "Vos projets" [level=3] [ref=e137]
+            - paragraph [ref=e138]:
+              - img "Location classique" [ref=e139]
+              - text: Des revenus locatifs que les banques regardent avec prudence.
+            - paragraph [ref=e142]:
+              - img "Avec TrustHome" [ref=e143]
+              - text: Des revenus réguliers et un bail solide, appréciés des banques pour vos futurs financements.
+    - region [ref=e145]:
+      - generic [ref=e146]:
+        - heading "De votre demande au premier loyer" [level=2] [ref=e147]
+        - list [ref=e148]:
+          - listitem [ref=e149]:
+            - generic [aria-hidden] [ref=e150]: "1"
+            - heading "Vous présentez votre logement" [level=3] [ref=e151]
+            - paragraph [ref=e152]: "Cinq questions en ligne : où il se trouve, son type, s’il est meublé, quand il est libre et le loyer que vous visez."
+          - listitem [ref=e153]:
+            - generic [aria-hidden] [ref=e154]: "2"
+            - heading "Nous vous rappelons sous 24 h" [level=3] [ref=e155]
+            - paragraph [ref=e156]: Par téléphone ou par WhatsApp, pour vous dire si votre logement correspond et répondre à vos questions.
+          - listitem [ref=e157]:
+            - generic [aria-hidden] [ref=e158]: "3"
+            - heading "Visite et proposition" [level=3] [ref=e159]
+            - paragraph [ref=e160]: "Nous visitons le logement, puis nous vous proposons un loyer et une durée de bail : 1, 2, 3 ans ou plus."
+          - listitem [ref=e161]:
+            - generic [aria-hidden] [ref=e162]: "4"
+            - heading "Vous signez, nous payons" [level=3] [ref=e163]
+            - paragraph [ref=e164]: Un bail rédigé par des avocats, que vous lisez avant de signer. Ensuite, le loyer arrive chaque mois, au plus tard le 5.
+        - 'link "Commencer : 5 questions" [ref=e166] [cursor=pointer]':
+          - /url: https://trusthome-proprietaires.vercel.app/?utm_source=trusthome.io&utm_medium=site&utm_campaign=vitrine&utm_content=fonctionnement
+    - region [ref=e167]:
+      - generic [ref=e168]:
+        - heading "Ils nous louent déjà leur logement" [level=2] [ref=e169]
+        - generic [ref=e170]:
+          - figure "ML Maxime DL. Propriétaire d'un T3 à Clichy (92)" [ref=e171]:
+            - generic "5 sur 5" [ref=e172]
+            - blockquote [ref=e183]: "« TrustHome gère mon T3 à Clichy depuis plusieurs mois et le résultat est sans appel : loyer versé à date fixe, zéro tracas administratif. L'équipe est disponible, réactive et vraiment professionnelle. Je recommande à tous les propriétaires de la région. »"
+            - generic [ref=e184]:
+              - generic [ref=e185]: ML
+              - generic [ref=e187]:
+                - generic [ref=e188]: Maxime DL.
+                - generic [ref=e189]: Propriétaire d'un T3 à Clichy (92)
+          - figure "DP David P. Propriétaire d'une maison individuelle à Saint-Germain-en-Laye (78)" [ref=e190]:
+            - generic "5 sur 5" [ref=e191]
+            - blockquote [ref=e202]: "« Au départ, j'avais quelques inquiétudes à l'idée de louer ma maison à Saint-Germain-en-Laye pendant mon expatriation. Finalement, avec TrustHome, tout s'est fait simplement : le loyer est versé régulièrement, sans souci, et la maison est bien entretenue. C'est rassurant de savoir que tout est géré sérieusement en mon absence. »"
+            - generic [ref=e203]:
+              - generic [ref=e204]: DP
+              - generic [ref=e206]:
+                - generic [ref=e207]: David P.
+                - generic [ref=e208]: Propriétaire d'une maison individuelle à Saint-Germain-en-Laye (78)
+          - figure "NM Nathalie M. Propriétaire d'un T3 à Versailles (78)" [ref=e209]:
+            - generic "5 sur 5" [ref=e210]
+            - blockquote [ref=e221]: « Grâce à TrustHome, mon T3 à Versailles me garantit un loyer régulier chaque mois, sans que j'aie à gérer quoi que ce soit. L'équipe est sérieuse et réactive, ce qui est vraiment appréciable. Je peux profiter de ma retraite tranquillement. »
+            - generic [ref=e222]:
+              - generic [ref=e223]: NM
+              - generic [ref=e225]:
+                - generic [ref=e226]: Nathalie M.
+                - generic [ref=e227]: Propriétaire d'un T3 à Versailles (78)
+          - figure "IB Isabelle B. Propriétaire d'un T2 à Asnières-sur-Seine (92)" [ref=e228]:
+            - generic "5 sur 5" [ref=e229]
+            - blockquote [ref=e240]: « J'étais un peu sceptique au début, mais TrustHome a complètement transformé la gestion de mon T2 à Asnières. Zéro vacance locative, un entretien nickel. »
+            - generic [ref=e241]:
+              - generic [ref=e242]: IB
+              - generic [ref=e244]:
+                - generic [ref=e245]: Isabelle B.
+                - generic [ref=e246]: Propriétaire d'un T2 à Asnières-sur-Seine (92)
+          - figure "TR Thomas R. Propriétaire d'une maison individuelle à Deauville (14)" [ref=e247]:
+            - generic "5 sur 5" [ref=e248]
+            - blockquote [ref=e259]: « TrustHome gère mon appartement depuis plusieurs mois et tout se passe bien. Le loyer est versé régulièrement, le bien est entretenu et j'ai des nouvelles de temps en temps sur la gestion. C'est rassurant au quotidien, et je regrette de ne pas les avoir connus plus tôt. »
+            - generic [ref=e260]:
+              - generic [ref=e261]: TR
+              - generic [ref=e263]:
+                - generic [ref=e264]: Thomas R.
+                - generic [ref=e265]: Propriétaire d'une maison individuelle à Deauville (14)
+    - region [ref=e266]:
+      - generic [ref=e267]:
+        - generic [ref=e268]:
+          - heading "Des logements dont nous nous occupons déjà" [level=2] [ref=e269]
+          - paragraph [ref=e270]: Ménage fait régulièrement, petites réparations traitées quand elles se présentent. C'est notre équipe qui le fait, et c'est nous qui payons.
+        - generic [ref=e271]:
+          - img "Salon lumineux avec canapé et table basse" [ref=e272]
+          - img "Cuisine équipée et rangée" [ref=e273]
+          - img "Chambre principale au lit fait" [ref=e274]
+          - img "Salle de douche propre" [ref=e275]
+          - img "Seconde chambre" [ref=e276]
+    - region [ref=e277]:
+      - generic [ref=e278]:
+        - generic [ref=e279]:
+          - heading "Les questions qu'on nous pose" [level=2] [ref=e280]
+          - paragraph [ref=e281]: Une autre question ? Posez-la-nous directement par téléphone ou WhatsApp.
+        - generic [ref=e282]:
+          - heading [level=3] [ref=e284]:
+            - button "Concrètement, que fait TrustHome ?" [ref=e285] [cursor=pointer]
+          - heading [level=3] [ref=e289]:
+            - button "Mon loyer est-il garanti même si le bien n'est pas occupé par des voyageurs/professionnels ?" [ref=e290] [cursor=pointer]
+          - heading [level=3] [ref=e294]:
+            - button "Qui s'occupe de l'entretien et des réparations ?" [ref=e295] [cursor=pointer]
+          - heading [level=3] [ref=e299]:
+            - button "Quels sont les frais avec TrustHome ?" [ref=e300] [cursor=pointer]
+          - heading [level=3] [ref=e304]:
+            - button "Comment TrustHome sélectionne les occupants ?" [ref=e305] [cursor=pointer]
+          - heading [level=3] [ref=e309]:
+            - button "Quelle est la durée typique d'un contrat de location avec TrustHome ?" [ref=e310] [cursor=pointer]
+          - heading [level=3] [ref=e314]:
+            - button "Que se passe-t-il en cas de dégradations du bien ?" [ref=e315] [cursor=pointer]
+          - heading [level=3] [ref=e319]:
+            - button "Comment TrustHome me protège-t-il du risque de squatteurs ?" [ref=e320] [cursor=pointer]
+          - heading [level=3] [ref=e324]:
+            - button "TrustHome peut-il m'aider à obtenir un prêt bancaire ?" [ref=e325] [cursor=pointer]
+    - region [ref=e328]:
+      - generic [ref=e329]:
+        - generic [ref=e330]:
+          - heading "Votre logement correspond-il ?" [level=2] [ref=e331]
+          - paragraph [ref=e332]: Répondez à cinq questions. Nous vous rappelons sous 24 heures pour vous dire si nous pouvons le louer, et à quelles conditions.
+          - link "Présenter mon logement" [ref=e333] [cursor=pointer]:
+            - /url: https://trusthome-proprietaires.vercel.app/?utm_source=trusthome.io&utm_medium=site&utm_campaign=vitrine&utm_content=bas-de-page
+        - generic [ref=e334]:
+          - paragraph [ref=e335]: "Ou directement, 7 jours sur 7 :"
+          - link "Appeler le 07 81 68 55 56" [ref=e336] [cursor=pointer]:
+            - /url: tel:+33781685556
+          - link "Écrire sur WhatsApp" [ref=e339] [cursor=pointer]:
+            - /url: https://wa.me/33781685556?text=Bonjour%2C%20je%20suis%20propri%C3%A9taire%20et%20je%20voudrais%20en%20savoir%20plus%20sur%20TrustHome.
+  - contentinfo [ref=e342]:
+    - generic [ref=e343]:
+      - generic [ref=e344]:
+        - generic [ref=e345]: TRUSTHOME
+        - paragraph [ref=e351]: TRUSTHOME SAS, société locataire de logements en Île-de-France, hors Paris.SIREN 945 352 847
+      - generic [ref=e352]:
+        - heading "Nous joindre" [level=2] [ref=e353]
+        - list [ref=e354]:
+          - listitem [ref=e355]:
+            - link "07 81 68 55 56" [ref=e356] [cursor=pointer]:
+              - /url: tel:+33781685556
+          - listitem [ref=e357]:
+            - link "WhatsApp" [ref=e358] [cursor=pointer]:
+              - /url: https://wa.me/33781685556?text=Bonjour%2C%20je%20suis%20propri%C3%A9taire%20et%20je%20voudrais%20en%20savoir%20plus%20sur%20TrustHome.
+          - listitem [ref=e359]:
+            - link "ajithanmoorthy@outlook.fr" [ref=e360] [cursor=pointer]:
+              - /url: mailto:ajithanmoorthy@outlook.fr
+      - generic [ref=e361]:
+        - heading "Informations" [level=2] [ref=e362]
+        - list [ref=e363]:
+          - listitem [ref=e364]:
+            - link "Mentions légales" [ref=e365] [cursor=pointer]:
+              - /url: /mentions-legales/
+          - listitem [ref=e366]:
+            - link "Politique de confidentialité" [ref=e367] [cursor=pointer]:
+              - /url: /confidentialite/
+          - listitem
+    - paragraph [ref=e369]: © 2026 TrustHome. Tous droits réservés.
+  - alert [ref=e370]

@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { nav, site } from "@/content";
+import { nav } from "@/content";
+import { Logo } from "@/components/logo";
+import { FunnelLink } from "@/components/funnel-link";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,12 +24,11 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="text-lg font-semibold tracking-tight">
-          {site.name}
-          <span className="text-accent">.</span>
+        <a href="/" aria-label="TrustHome, accueil">
+          <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm text-muted md:flex">
+        <nav aria-label="Navigation principale" className="hidden items-center gap-8 text-sm text-muted md:flex">
           {nav.map((item) => (
             <a key={item.href} href={item.href} className="transition-colors hover:text-ink">
               {item.label}
@@ -35,12 +36,9 @@ export function Header() {
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-ink px-4 py-2 text-sm font-medium text-bg transition-opacity hover:opacity-85 md:inline-block"
-        >
-          Estimer mon loyer
-        </a>
+        <div className="hidden md:block">
+          <FunnelLink placement="header" variant="ink" className="px-4 py-2 text-sm" />
+        </div>
 
         <button
           type="button"
@@ -65,13 +63,7 @@ export function Header() {
               {item.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="mt-5 block rounded-full bg-ink py-3 text-center font-medium text-bg"
-          >
-            Estimer mon loyer
-          </a>
+          <FunnelLink placement="menu-mobile" variant="ink" onClick={() => setOpen(false)} className="mt-5 w-full" />
         </nav>
       )}
     </header>

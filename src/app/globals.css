@@ -1,27 +1,32 @@
 @import "tailwindcss";
 
-/* Palette sobre : fond crème, encre presque noire, un seul accent vert profond. */
+/* Palette alignée sur le logo et le tunnel : encre bleu marine, accent bleu du logo,
+   vert réservé à ce qui confirme un loyer versé. */
 :root {
-  --bg: #fafaf7;
+  --bg: #f7f8fa;
   --surface: #ffffff;
-  --ink: #111412;
-  --muted: #5f665f;
-  --line: #e6e6e0;
-  --accent: #1f4d3f;
+  --ink: #0b1b3f;
+  --muted: #56617a;
+  --line: #e2e6ee;
+  --accent: #134776;
   --accent-ink: #ffffff;
-  --accent-soft: #e9f0ec;
+  --accent-soft: #eaf0f7;
+  --credit: #16a34a;
+  --credit-soft: #e8f6ed;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e110f;
-    --surface: #161a17;
-    --ink: #f1f2ee;
-    --muted: #a0a79f;
-    --line: #262b27;
-    --accent: #8fd1b0;
-    --accent-ink: #0e110f;
-    --accent-soft: #1b2a23;
+    --bg: #08122a;
+    --surface: #0f1b38;
+    --ink: #eef2f9;
+    --muted: #a3aec4;
+    --line: #1f2d4d;
+    --accent: #9cc0ec;
+    --accent-ink: #08122a;
+    --accent-soft: #15264a;
+    --credit: #4ade80;
+    --credit-soft: #10301f;
   }
 }
 
@@ -34,7 +39,15 @@
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
   --color-accent-soft: var(--accent-soft);
+  --color-credit: var(--credit);
+  --color-credit-soft: var(--credit-soft);
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 html {
