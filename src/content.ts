@@ -8,8 +8,7 @@ export const site = {
   siren: "945 352 847",
   address: "60 rue François Ier, 75008 Paris",
   area: "France métropolitaine",
-  // À remplacer par contact@trusthome.io (#31)
-  email: "ajithanmoorthy@outlook.fr",
+  email: "trusthome.io@gmail.com",
   phone: "07 81 68 55 56",
   phoneIntl: "+33781685556",
   phoneHref: "tel:+33781685556",
@@ -132,31 +131,31 @@ export const testimonials = [
     name: "Maxime DL.",
     place: "T3 à Clichy (92)",
     quote:
-      "TrustHome gère mon T3 à Clichy depuis plusieurs mois et le résultat est sans appel : loyer versé à date fixe, zéro tracas administratif. L'équipe est disponible, réactive et vraiment professionnelle. Je recommande à tous les propriétaires de la région.",
+      "Je n’ai plus à me soucier de trouver des locataires, de gérer les entrées et sorties ou les petits soucis du quotidien. Avoir un locataire professionnel qui s’engage sur le long terme est un vrai plus. Mon loyer est versé chaque mois sans retard et mon appartement est très bien entretenu. C’est un réel confort de ne plus avoir à gérer tout ça et de pouvoir louer l’esprit tranquille.",
   },
   {
     name: "David P.",
     place: "Maison à Saint-Germain-en-Laye (78)",
     quote:
-      "Au départ, j'avais quelques inquiétudes à l'idée de louer ma maison à Saint-Germain-en-Laye pendant mon expatriation. Finalement, avec TrustHome, tout s'est fait simplement : le loyer est versé régulièrement, sans souci, et la maison est bien entretenue. C'est rassurant de savoir que tout est géré sérieusement en mon absence.",
+      "Au début, j’avais quelques appréhensions à l’idée de louer ma maison pendant mon expatriation, mais finalement, faire appel à TrustHome a été la meilleure décision. Je n’ai rien à gérer, ils ne me sollicitent jamais et mon loyer tombe chaque mois. Je peux sereinement profiter de mon expatriation et c’est exactement ce que je recherchais. Nous avons d’ailleurs été tellement satisfaits que nous leur louons désormais la quasi-totalité de notre parc immobilier. Merci à toute l’équipe !",
   },
   {
     name: "Nathalie M.",
     place: "T3 à Versailles (78)",
     quote:
-      "Grâce à TrustHome, mon T3 à Versailles me garantit un loyer régulier chaque mois, sans que j'aie à gérer quoi que ce soit. L'équipe est sérieuse et réactive, ce qui est vraiment appréciable. Je peux profiter de ma retraite tranquillement.",
+      "Depuis que je loue mon appartement à TrustHome, je profite paisiblement de ma retraite. Plus besoin de chercher de nouveaux locataires, ni de me demander si je vais tomber sur quelqu’un de fiable ou qui risque d’abîmer mon logement. Après quelques mauvaises expériences ça fait vraiment du bien de pouvoir enfin louer sans avoir à se faire de souci. Un vrai soulagement.",
   },
   {
     name: "Isabelle B.",
     place: "T2 à Asnières-sur-Seine (92)",
     quote:
-      "J'étais un peu sceptique au début, mais TrustHome a complètement transformé la gestion de mon T2 à Asnières. Zéro vacance locative, un entretien nickel.",
+      "En tant qu’investisseur immobilier, ce que j’apprécie avec TrustHome, c’est surtout la tranquillité et la visibilité que ça m’apporte. Je sais que mon loyer sera versé chaque mois, que mon bien sera entretenu et que je n’aurai pas à gérer les changements de locataires. Aujourd’hui, j’envisage même mes futurs investissements différemment, en sachant que je peux compter sur un locataire professionnel et sérieux dès le départ. C’est un vrai plus pour développer mes investissements.",
   },
   {
     name: "Thomas R.",
     place: "Deauville (14)",
     quote:
-      "TrustHome gère mon appartement depuis plusieurs mois et tout se passe bien. Le loyer est versé régulièrement, le bien est entretenu et j'ai des nouvelles de temps en temps sur la gestion. C'est rassurant au quotidien, et je regrette de ne pas les avoir connus plus tôt.",
+      "TrustHome loue mon appartement depuis plusieurs mois et tout se passe très bien. Le loyer est versé chaque 1er du mois sans aucun retard. Le bien est très bien entretenu et ils m’ont même montré le résultat des embellissements apportés à l’appartement. C’est vraiment rassurant au quotidien.",
   },
 ];
 

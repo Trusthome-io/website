@@ -272,7 +272,7 @@ export default function Home() {
         <section id="avis" className="mx-auto max-w-6xl px-5 py-24 md:py-32">
           <Reveal className="max-w-2xl">
             <Eyebrow>Avis</Eyebrow>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ils nous ont confié leur bien.</h2>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ils nous ont choisis comme locataire.</h2>
           </Reveal>
           <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
             {testimonials.map((t, i) => (
